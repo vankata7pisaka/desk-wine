@@ -1,0 +1,81 @@
+﻿2026-08-12T20:55:28.1598161Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-08-12T20:55:28.1607093Z ##[group]Run actions/checkout@v4
+2026-08-12T20:55:28.1607880Z with:
+2026-08-12T20:55:28.1608356Z   repository: vankata7pisaka/desk-wine
+2026-08-12T20:55:28.1612863Z   token: ***
+2026-08-12T20:55:28.1613350Z   ssh-strict: true
+2026-08-12T20:55:28.1613864Z   ssh-user: git
+2026-08-12T20:55:28.1614329Z   persist-credentials: true
+2026-08-12T20:55:28.1614831Z   clean: true
+2026-08-12T20:55:28.1615288Z   sparse-checkout-cone-mode: true
+2026-08-12T20:55:28.1615814Z   fetch-depth: 1
+2026-08-12T20:55:28.1616264Z   fetch-tags: false
+2026-08-12T20:55:28.1616739Z   show-progress: true
+2026-08-12T20:55:28.1617185Z   lfs: false
+2026-08-12T20:55:28.1617605Z   submodules: false
+2026-08-12T20:55:28.1618098Z   set-safe-directory: true
+2026-08-12T20:55:28.1618608Z   allow-unsafe-pr-checkout: false
+2026-08-12T20:55:28.1619446Z env:
+2026-08-12T20:55:28.1619893Z   WINE_REPO: GameNative/wine
+2026-08-12T20:55:28.1620406Z   NDK_VERSION: 27.3.13750724
+2026-08-12T20:55:28.1620908Z   LLVM_MINGW_VERSION: 20250920
+2026-08-12T20:55:28.1621448Z   TERMUXFS_REPO: GameNative/termux-on-gha
+2026-08-12T20:55:28.1622275Z   TERMUXFS_TAG: build-20260218
+2026-08-12T20:55:28.1622884Z   DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+2026-08-12T20:55:28.1623518Z ##[endgroup]
+2026-08-12T20:55:28.2905557Z Syncing repository: vankata7pisaka/desk-wine
+2026-08-12T20:55:28.2908508Z ##[group]Getting Git version info
+2026-08-12T20:55:28.2909681Z Working directory is '/home/runner/work/desk-wine/desk-wine'
+2026-08-12T20:55:28.2920154Z [command]/usr/bin/git version
+2026-08-12T20:55:28.3000956Z git version 2.54.0
+2026-08-12T20:55:28.3028234Z ##[endgroup]
+2026-08-12T20:55:28.3035964Z Temporarily overriding HOME='/home/runner/work/_temp/8dff1d69-f8d7-45e2-b02c-aba88b26ee02' before making global git config changes
+2026-08-12T20:55:28.3038594Z Adding repository directory to the temporary git global config as a safe directory
+2026-08-12T20:55:28.3040934Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/desk-wine/desk-wine
+2026-08-12T20:55:28.3125925Z Deleting the contents of '/home/runner/work/desk-wine/desk-wine'
+2026-08-12T20:55:28.3128189Z ##[group]Initializing the repository
+2026-08-12T20:55:28.3129639Z [command]/usr/bin/git init /home/runner/work/desk-wine/desk-wine
+2026-08-12T20:55:28.3273324Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-08-12T20:55:28.3287497Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-08-12T20:55:28.3290607Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-08-12T20:55:28.3292467Z hint: call:
+2026-08-12T20:55:28.3293351Z hint:
+2026-08-12T20:55:28.3294533Z hint: 	git config --global init.defaultBranch <name>
+2026-08-12T20:55:28.3318970Z hint:
+2026-08-12T20:55:28.3327184Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-08-12T20:55:28.3329124Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-08-12T20:55:28.3334179Z hint:
+2026-08-12T20:55:28.3335440Z hint: 	git branch -m <name>
+2026-08-12T20:55:28.3336549Z hint:
+2026-08-12T20:55:28.3354868Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-08-12T20:55:28.3363122Z Initialized empty Git repository in /home/runner/work/desk-wine/desk-wine/.git/
+2026-08-12T20:55:28.3412866Z [command]/usr/bin/git remote add origin https://github.com/vankata7pisaka/desk-wine
+2026-08-12T20:55:28.3437477Z ##[endgroup]
+2026-08-12T20:55:28.3460358Z ##[group]Disabling automatic garbage collection
+2026-08-12T20:55:28.3467329Z [command]/usr/bin/git config --local gc.auto 0
+2026-08-12T20:55:28.3487139Z ##[endgroup]
+2026-08-12T20:55:28.3489165Z ##[group]Setting up auth
+2026-08-12T20:55:28.3494818Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-08-12T20:55:28.3502273Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-08-12T20:55:28.4217321Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-08-12T20:55:28.4224974Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-08-12T20:55:28.4365694Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-08-12T20:55:28.4408427Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-08-12T20:55:28.4719896Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-08-12T20:55:28.4797179Z ##[endgroup]
+2026-08-12T20:55:28.4798786Z ##[group]Fetching the repository
+2026-08-12T20:55:28.4801965Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +51bf06d5db304e8f64809f35e10ce19a7b55f8e4:refs/remotes/origin/main
+2026-08-12T20:55:28.7629372Z From https://github.com/vankata7pisaka/desk-wine
+2026-08-12T20:55:28.7632594Z  * [new ref]         51bf06d5db304e8f64809f35e10ce19a7b55f8e4 -> origin/main
+2026-08-12T20:55:28.7664762Z ##[endgroup]
+2026-08-12T20:55:28.7666792Z ##[group]Determining the checkout info
+2026-08-12T20:55:28.7668633Z ##[endgroup]
+2026-08-12T20:55:28.7670954Z [command]/usr/bin/git sparse-checkout disable
+2026-08-12T20:55:28.7742820Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-08-12T20:55:28.7776871Z ##[group]Checking out the ref
+2026-08-12T20:55:28.7790565Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-08-12T20:55:28.7848271Z Switched to a new branch 'main'
+2026-08-12T20:55:28.7849487Z branch 'main' set up to track 'origin/main'.
+2026-08-12T20:55:28.7893804Z ##[endgroup]
+2026-08-12T20:55:28.7940113Z [command]/usr/bin/git log -1 --format=%H
+2026-08-12T20:55:28.7969707Z 51bf06d5db304e8f64809f35e10ce19a7b55f8e4

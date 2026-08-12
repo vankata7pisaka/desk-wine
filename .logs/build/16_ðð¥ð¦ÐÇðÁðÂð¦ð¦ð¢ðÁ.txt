@@ -1,0 +1,23 @@
+﻿2026-08-12T20:58:24.8703620Z ##[group]Run bash build-scripts/build-step-x86_64.sh --install
+2026-08-12T20:58:24.8704425Z [36;1mbash build-scripts/build-step-x86_64.sh --install[0m
+2026-08-12T20:58:24.8761283Z shell: /usr/bin/bash -e {0}
+2026-08-12T20:58:24.8762106Z env:
+2026-08-12T20:58:24.8762492Z   WINE_REPO: GameNative/wine
+2026-08-12T20:58:24.8762949Z   NDK_VERSION: 27.3.13750724
+2026-08-12T20:58:24.8763677Z   LLVM_MINGW_VERSION: 20250920
+2026-08-12T20:58:24.8764159Z   TERMUXFS_REPO: GameNative/termux-on-gha
+2026-08-12T20:58:24.8764691Z   TERMUXFS_TAG: build-20260218
+2026-08-12T20:58:24.8765219Z   DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+2026-08-12T20:58:24.8765797Z   WINE_BRANCH: wine-11.3
+2026-08-12T20:58:24.8766199Z   WINE_VERSION: 11.3
+2026-08-12T20:58:24.8766567Z   WINE_SHA: f3761db
+2026-08-12T20:58:24.8766922Z ##[endgroup]
+2026-08-12T20:58:24.8846743Z Installing...
+2026-08-12T20:58:24.8941591Z make: *** No rule to make target 'install'.  Stop.
+2026-08-12T20:58:24.8962501Z cp: cannot stat '/home/runner/termuxfs/x86_64/data/data/com.termux/files/usr/../opt/wine/bin/wine*': No such file or directory
+2026-08-12T20:58:24.8976332Z cp: cannot stat '/home/runner/termuxfs/x86_64/data/data/com.termux/files/usr/../opt/wine/bin/reg*': No such file or directory
+2026-08-12T20:58:24.8990025Z cp: cannot stat '/home/runner/termuxfs/x86_64/data/data/com.termux/files/usr/../opt/wine/bin/msi*': No such file or directory
+2026-08-12T20:58:24.9004920Z cp: cannot stat '/home/runner/termuxfs/x86_64/data/data/com.termux/files/usr/../opt/wine/bin/notepad': No such file or directory
+2026-08-12T20:58:24.9019173Z cp: cannot stat '/home/runner/termuxfs/x86_64/data/data/com.termux/files/usr/../opt/wine/lib/wine': No such file or directory
+2026-08-12T20:58:24.9034528Z cp: cannot stat '/home/runner/termuxfs/x86_64/data/data/com.termux/files/usr/../opt/wine/share/wine': No such file or directory
+2026-08-12T20:58:24.9047955Z ##[error]Process completed with exit code 1.

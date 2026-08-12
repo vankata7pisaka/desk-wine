@@ -1,0 +1,317 @@
+﻿2026-08-12T20:58:16.7259778Z ##[group]Run bash build-scripts/build-step-x86_64.sh --configure
+2026-08-12T20:58:16.7260655Z [36;1mbash build-scripts/build-step-x86_64.sh --configure[0m
+2026-08-12T20:58:16.7306181Z shell: /usr/bin/bash -e {0}
+2026-08-12T20:58:16.7306465Z env:
+2026-08-12T20:58:16.7306671Z   WINE_REPO: GameNative/wine
+2026-08-12T20:58:16.7306929Z   NDK_VERSION: 27.3.13750724
+2026-08-12T20:58:16.7307180Z   LLVM_MINGW_VERSION: 20250920
+2026-08-12T20:58:16.7307451Z   TERMUXFS_REPO: GameNative/termux-on-gha
+2026-08-12T20:58:16.7307755Z   TERMUXFS_TAG: build-20260218
+2026-08-12T20:58:16.7308054Z   DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+2026-08-12T20:58:16.7308379Z   WINE_BRANCH: wine-11.3
+2026-08-12T20:58:16.7308599Z   WINE_VERSION: 11.3
+2026-08-12T20:58:16.7308800Z   WINE_SHA: f3761db
+2026-08-12T20:58:16.7309004Z ##[endgroup]
+2026-08-12T20:58:17.0682856Z checking build system type... x86_64-pc-linux-android
+2026-08-12T20:58:17.0725315Z checking host system type... x86_64-pc-linux-android28
+2026-08-12T20:58:17.0729800Z checking for x86_64-linux-android28-gcc... /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang
+2026-08-12T20:58:17.1614637Z checking whether the C compiler works... yes
+2026-08-12T20:58:17.1622688Z checking for C compiler default output file name... a.out
+2026-08-12T20:58:17.1882705Z checking for suffix of executables... 
+2026-08-12T20:58:17.2179989Z checking whether we are cross compiling... yes
+2026-08-12T20:58:17.2345925Z checking for suffix of object files... o
+2026-08-12T20:58:17.2490225Z checking whether the compiler supports GNU C... yes
+2026-08-12T20:58:17.2636210Z checking whether /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang accepts -g... yes
+2026-08-12T20:58:17.2865947Z checking for /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang option to enable C11 features... none needed
+2026-08-12T20:58:17.3492575Z checking whether the compiler supports GNU C++... yes
+2026-08-12T20:58:17.3660874Z checking whether /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang++ accepts -g... yes
+2026-08-12T20:58:17.6363989Z checking for /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang++ option to enable C++11 features... unsupported
+2026-08-12T20:58:17.8145772Z checking for /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang++ option to enable C++98 features... unsupported
+2026-08-12T20:58:17.8152162Z checking for x86_64-linux-android28-cpp... no
+2026-08-12T20:58:17.8157720Z configure: WARNING: using cross tools not prefixed with host triplet
+2026-08-12T20:58:17.8158412Z checking for cpp... cpp
+2026-08-12T20:58:17.8160179Z checking for x86_64-linux-android28-ld... /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/ld
+2026-08-12T20:58:17.8166921Z checking for the directory containing the Wine tools... ./wine-tools
+2026-08-12T20:58:17.8172938Z checking for flex... flex
+2026-08-12T20:58:17.8231568Z checking whether flex is recent enough... yes
+2026-08-12T20:58:17.8237273Z checking for bison... bison
+2026-08-12T20:58:17.8409360Z checking whether bison is recent enough... yes
+2026-08-12T20:58:17.8412052Z checking for x86_64-linux-android28-strip... /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip
+2026-08-12T20:58:17.8413678Z checking whether ln -s works... yes
+2026-08-12T20:58:17.8422393Z checking for x86_64-linux-android28-pkg-config... no
+2026-08-12T20:58:17.8827896Z checking whether clang supports -target x86_64-windows -fuse-ld=lld -Wl,-subsystem:console -Wl,-WX --no-default-config... yes
+2026-08-12T20:58:17.9575409Z checking for clang option to enable C99 features... -D__STDC__
+2026-08-12T20:58:17.9812940Z checking whether clang supports SEH directives... yes
+2026-08-12T20:58:18.0172913Z checking whether clang supports -fno-strict-aliasing... yes
+2026-08-12T20:58:18.0542699Z checking whether clang supports -Werror=unknown-warning-option... yes
+2026-08-12T20:58:18.0911331Z checking whether clang supports -Werror=unused-command-line-argument... yes
+2026-08-12T20:58:18.1283021Z checking whether clang supports -Werror=ignored-optimization-argument... yes
+2026-08-12T20:58:18.1654700Z checking whether clang supports -Werror=unsupported-floating-point-opt... yes
+2026-08-12T20:58:18.2018409Z checking whether clang supports -Wdeclaration-after-statement... yes
+2026-08-12T20:58:18.2398152Z checking whether clang supports -Wempty-body... yes
+2026-08-12T20:58:18.2787062Z checking whether clang supports -Wignored-qualifiers... yes
+2026-08-12T20:58:18.3161327Z checking whether clang supports -Winit-self... yes
+2026-08-12T20:58:18.3449849Z checking whether clang supports -Wpacked-not-aligned... no
+2026-08-12T20:58:18.3838488Z checking whether clang supports -Wmicrosoft-enum-forward-reference... yes
+2026-08-12T20:58:18.4148693Z checking whether clang supports -Wshift-overflow=2... no
+2026-08-12T20:58:18.4518151Z checking whether clang supports -Wstrict-prototypes... yes
+2026-08-12T20:58:18.4892758Z checking whether clang supports -Wtype-limits... yes
+2026-08-12T20:58:18.5259770Z checking whether clang supports -Wunused-but-set-parameter... yes
+2026-08-12T20:58:18.5622195Z checking whether clang supports -Wvla... yes
+2026-08-12T20:58:18.5985255Z checking whether clang supports -Wwrite-strings... yes
+2026-08-12T20:58:18.6343977Z checking whether clang supports -Wpointer-arith... yes
+2026-08-12T20:58:18.6625420Z checking whether clang supports -Wlogical-op... no
+2026-08-12T20:58:18.6986260Z checking whether clang supports -Wabsolute-value... yes
+2026-08-12T20:58:18.7343465Z checking whether clang supports -Wenum-enum-conversion... yes
+2026-08-12T20:58:18.7702967Z checking whether clang supports -ffunction-sections... yes
+2026-08-12T20:58:18.8063021Z checking whether clang supports -fasync-exceptions -DMIN_CLANG_VERSION=19... yes
+2026-08-12T20:58:18.8455637Z checking whether clang supports -ffp-exception-behavior=maytrap... yes
+2026-08-12T20:58:18.8843637Z checking whether clang supports -fms-hotpatch -DMIN_CLANG_VERSION=18... yes
+2026-08-12T20:58:18.9067534Z checking whether clang supports -flarge-source-files -Wmisleading-indentation... no
+2026-08-12T20:58:18.9437913Z checking whether clang supports -Wformat-overflow... yes
+2026-08-12T20:58:18.9795403Z checking whether clang supports -Wnonnull... yes
+2026-08-12T20:58:19.0149860Z checking whether clang supports -mlong-double-64... yes
+2026-08-12T20:58:19.0515063Z checking whether clang supports -mcx16... yes
+2026-08-12T20:58:19.0912472Z checking whether clang supports -mcmodel=small... yes
+2026-08-12T20:58:19.1294947Z checking whether clang supports -Wl,-debug:dwarf... yes
+2026-08-12T20:58:19.1687277Z checking whether clang supports -gdwarf-4... yes
+2026-08-12T20:58:19.2054169Z checking whether clang supports -target i686-windows -fuse-ld=lld -Wl,-subsystem:console -Wl,-WX --no-default-config... yes
+2026-08-12T20:58:19.3009377Z checking for clang option to enable C99 features... -D__STDC__
+2026-08-12T20:58:19.3385055Z checking whether clang supports -fno-strict-aliasing... yes
+2026-08-12T20:58:19.3760371Z checking whether clang supports -Werror=unknown-warning-option... yes
+2026-08-12T20:58:19.4128127Z checking whether clang supports -Werror=unused-command-line-argument... yes
+2026-08-12T20:58:19.4513825Z checking whether clang supports -Werror=ignored-optimization-argument... yes
+2026-08-12T20:58:19.4883923Z checking whether clang supports -Werror=unsupported-floating-point-opt... yes
+2026-08-12T20:58:19.5260010Z checking whether clang supports -Wdeclaration-after-statement... yes
+2026-08-12T20:58:19.5635053Z checking whether clang supports -Wempty-body... yes
+2026-08-12T20:58:19.6012584Z checking whether clang supports -Wignored-qualifiers... yes
+2026-08-12T20:58:19.6380424Z checking whether clang supports -Winit-self... yes
+2026-08-12T20:58:19.6668098Z checking whether clang supports -Wpacked-not-aligned... no
+2026-08-12T20:58:19.7033140Z checking whether clang supports -Wmicrosoft-enum-forward-reference... yes
+2026-08-12T20:58:19.7309498Z checking whether clang supports -Wshift-overflow=2... no
+2026-08-12T20:58:19.7668994Z checking whether clang supports -Wstrict-prototypes... yes
+2026-08-12T20:58:19.8032300Z checking whether clang supports -Wtype-limits... yes
+2026-08-12T20:58:19.8390140Z checking whether clang supports -Wunused-but-set-parameter... yes
+2026-08-12T20:58:19.8762036Z checking whether clang supports -Wvla... yes
+2026-08-12T20:58:19.9126048Z checking whether clang supports -Wwrite-strings... yes
+2026-08-12T20:58:19.9486952Z checking whether clang supports -Wpointer-arith... yes
+2026-08-12T20:58:19.9766225Z checking whether clang supports -Wlogical-op... no
+2026-08-12T20:58:20.0131227Z checking whether clang supports -Wabsolute-value... yes
+2026-08-12T20:58:20.0525550Z checking whether clang supports -Wenum-enum-conversion... yes
+2026-08-12T20:58:20.0898947Z checking whether clang supports -ffunction-sections... yes
+2026-08-12T20:58:20.1270393Z checking whether clang supports -fasync-exceptions -DMIN_CLANG_VERSION=19... yes
+2026-08-12T20:58:20.1639640Z checking whether clang supports -ffp-exception-behavior=maytrap... yes
+2026-08-12T20:58:20.2007898Z checking whether clang supports -fms-hotpatch -DMIN_CLANG_VERSION=18... yes
+2026-08-12T20:58:20.2226454Z checking whether clang supports -flarge-source-files -Wmisleading-indentation... no
+2026-08-12T20:58:20.2590659Z checking whether clang supports -fno-omit-frame-pointer... yes
+2026-08-12T20:58:20.2812171Z checking whether clang supports -mpreferred-stack-boundary=2... no
+2026-08-12T20:58:20.3187749Z checking whether clang supports -mlong-double-64... yes
+2026-08-12T20:58:20.3578419Z checking whether clang supports -Wl,--disable-stdcall-fixup... no
+2026-08-12T20:58:20.3946032Z checking whether clang supports -Wl,-debug:dwarf... yes
+2026-08-12T20:58:20.4313513Z checking whether clang supports -gdwarf-4... yes
+2026-08-12T20:58:20.4623437Z checking for i386_set_ldt in -li386... no
+2026-08-12T20:58:20.4627168Z checking for special C compiler options needed for large files... no
+2026-08-12T20:58:20.4784856Z checking for _FILE_OFFSET_BITS value needed for large files... no
+2026-08-12T20:58:20.5013339Z checking for stdio.h... yes
+2026-08-12T20:58:20.5241933Z checking for stdlib.h... yes
+2026-08-12T20:58:20.5467334Z checking for string.h... yes
+2026-08-12T20:58:20.5693123Z checking for inttypes.h... yes
+2026-08-12T20:58:20.5919006Z checking for stdint.h... yes
+2026-08-12T20:58:20.6154657Z checking for strings.h... yes
+2026-08-12T20:58:20.6393284Z checking for sys/stat.h... yes
+2026-08-12T20:58:20.6627460Z checking for sys/types.h... yes
+2026-08-12T20:58:20.6896672Z checking for unistd.h... yes
+2026-08-12T20:58:20.6900476Z checking for CL/cl.h... (cached) no
+2026-08-12T20:58:20.6901398Z checking for OpenCL/opencl.h... (cached) no
+2026-08-12T20:58:20.7192461Z checking for arpa/inet.h... yes
+2026-08-12T20:58:20.7466521Z checking for arpa/nameser.h... yes
+2026-08-12T20:58:20.7736796Z checking for asm/termbits.h... yes
+2026-08-12T20:58:20.8009516Z checking for asm/types.h... yes
+2026-08-12T20:58:20.8288066Z checking for asm/user.h... no
+2026-08-12T20:58:20.8569771Z checking for bluetooth/bluetooth.h... no
+2026-08-12T20:58:20.8854194Z checking for elf.h... yes
+2026-08-12T20:58:20.8856075Z checking for gettext-po.h... (cached) no
+2026-08-12T20:58:20.9141231Z checking for link.h... yes
+2026-08-12T20:58:20.9423566Z checking for linux/cdrom.h... yes
+2026-08-12T20:58:20.9714690Z checking for linux/filter.h... yes
+2026-08-12T20:58:20.9998559Z checking for linux/fs.h... yes
+2026-08-12T20:58:21.0282724Z checking for linux/hdreg.h... yes
+2026-08-12T20:58:21.0549834Z checking for linux/hidraw.h... yes
+2026-08-12T20:58:21.0828250Z checking for linux/input.h... yes
+2026-08-12T20:58:21.1103360Z checking for linux/ioctl.h... yes
+2026-08-12T20:58:21.1374560Z checking for linux/major.h... yes
+2026-08-12T20:58:21.1647399Z checking for linux/ntsync.h... yes
+2026-08-12T20:58:21.1933427Z checking for linux/param.h... yes
+2026-08-12T20:58:21.2220504Z checking for linux/serial.h... yes
+2026-08-12T20:58:21.2510685Z checking for linux/types.h... yes
+2026-08-12T20:58:21.2793767Z checking for linux/ucdrom.h... no
+2026-08-12T20:58:21.3068649Z checking for linux/userfaultfd.h... yes
+2026-08-12T20:58:21.3356758Z checking for linux/wireless.h... yes
+2026-08-12T20:58:21.3633723Z checking for lwp.h... no
+2026-08-12T20:58:21.3912824Z checking for mach-o/loader.h... no
+2026-08-12T20:58:21.4192950Z checking for mach/mach.h... no
+2026-08-12T20:58:21.4476393Z checking for machine/cpu.h... no
+2026-08-12T20:58:21.4762934Z checking for machine/sysarch.h... no
+2026-08-12T20:58:21.5040697Z checking for mntent.h... yes
+2026-08-12T20:58:21.5325182Z checking for netdb.h... yes
+2026-08-12T20:58:21.5613864Z checking for netinet/in.h... yes
+2026-08-12T20:58:21.5888339Z checking for netinet/in_systm.h... yes
+2026-08-12T20:58:21.6169884Z checking for netinet/tcp.h... yes
+2026-08-12T20:58:21.6449885Z checking for netinet/tcp_fsm.h... no
+2026-08-12T20:58:21.6452615Z checking for pcap/pcap.h... (cached) no
+2026-08-12T20:58:21.6733344Z checking for port.h... no
+2026-08-12T20:58:21.7041184Z checking for pwd.h... yes
+2026-08-12T20:58:21.7315962Z checking for sched.h... yes
+2026-08-12T20:58:21.7593745Z checking for scsi/scsi.h... yes
+2026-08-12T20:58:21.7869100Z checking for scsi/scsi_ioctl.h... yes
+2026-08-12T20:58:21.8162400Z checking for scsi/sg.h... yes
+2026-08-12T20:58:21.8457761Z checking for sys/attr.h... no
+2026-08-12T20:58:21.8732796Z checking for sys/auxv.h... yes
+2026-08-12T20:58:21.9017797Z checking for sys/cdio.h... no
+2026-08-12T20:58:21.9293446Z checking for sys/epoll.h... yes
+2026-08-12T20:58:21.9578643Z checking for sys/event.h... no
+2026-08-12T20:58:21.9859185Z checking for sys/extattr.h... no
+2026-08-12T20:58:22.0141068Z checking for sys/filio.h... no
+2026-08-12T20:58:22.0414680Z checking for sys/ipc.h... yes
+2026-08-12T20:58:22.0695138Z checking for sys/link.h... no
+2026-08-12T20:58:22.0986269Z checking for sys/modem.h... no
+2026-08-12T20:58:22.1268817Z checking for sys/mtio.h... yes
+2026-08-12T20:58:22.1544715Z checking for sys/param.h... yes
+2026-08-12T20:58:22.1822581Z checking for sys/prctl.h... yes
+2026-08-12T20:58:22.2100922Z checking for sys/ptrace.h... yes
+2026-08-12T20:58:22.2375047Z checking for sys/queue.h... yes
+2026-08-12T20:58:22.2657945Z checking for sys/random.h... yes
+2026-08-12T20:58:22.2938637Z checking for sys/resource.h... yes
+2026-08-12T20:58:22.3218963Z checking for sys/scsiio.h... no
+2026-08-12T20:58:22.3493212Z checking for sys/shm.h... yes
+2026-08-12T20:58:22.3767079Z checking for sys/signal.h... yes
+2026-08-12T20:58:22.4067603Z checking for sys/socketvar.h... no
+2026-08-12T20:58:22.4353793Z checking for sys/sockio.h... no
+2026-08-12T20:58:22.4628113Z checking for sys/statvfs.h... yes
+2026-08-12T20:58:22.4914121Z checking for sys/strtio.h... no
+2026-08-12T20:58:22.5191623Z checking for sys/syscall.h... yes
+2026-08-12T20:58:22.5468781Z checking for sys/sysinfo.h... yes
+2026-08-12T20:58:22.5741159Z checking for sys/times.h... yes
+2026-08-12T20:58:22.6012750Z checking for sys/uio.h... yes
+2026-08-12T20:58:22.6277990Z checking for sys/user.h... yes
+2026-08-12T20:58:22.6551374Z checking for sys/utsname.h... yes
+2026-08-12T20:58:22.6840024Z checking for sys/vnode.h... no
+2026-08-12T20:58:22.7118410Z checking for sys/xattr.h... yes
+2026-08-12T20:58:22.7395693Z checking for syscall.h... yes
+2026-08-12T20:58:22.7668062Z checking for utime.h... yes
+2026-08-12T20:58:22.7949840Z checking for valgrind/memcheck.h... no
+2026-08-12T20:58:22.8233319Z checking for valgrind/valgrind.h... no
+2026-08-12T20:58:22.8509323Z checking for sys/mkdev.h... no
+2026-08-12T20:58:22.8783158Z checking for sys/sysmacros.h... yes
+2026-08-12T20:58:22.8983406Z checking for sys/conf.h... no
+2026-08-12T20:58:22.9191091Z checking for sys/mount.h... yes
+2026-08-12T20:58:22.9389520Z checking for sys/statfs.h... yes
+2026-08-12T20:58:22.9393292Z checking for sys/user.h... (cached) yes
+2026-08-12T20:58:22.9594529Z checking for sys/vfs.h... yes
+2026-08-12T20:58:22.9803014Z checking for sys/sysctl.h... no
+2026-08-12T20:58:22.9991567Z checking for netinet/ip.h... yes
+2026-08-12T20:58:23.0182594Z checking for net/if.h... yes
+2026-08-12T20:58:23.0388285Z checking for net/if_arp.h... yes
+2026-08-12T20:58:23.0620673Z checking for net/if_dl.h... no
+2026-08-12T20:58:23.0853552Z checking for net/if_types.h... no
+2026-08-12T20:58:23.1042707Z checking for net/route.h... yes
+2026-08-12T20:58:23.1228624Z checking for netinet/if_ether.h... yes
+2026-08-12T20:58:23.1453145Z checking for netinet/in_pcb.h... no
+2026-08-12T20:58:23.1634954Z checking for netinet/ip_icmp.h... yes
+2026-08-12T20:58:23.1859469Z checking for netinet/ip_var.h... no
+2026-08-12T20:58:23.2048474Z checking for netinet/udp.h... yes
+2026-08-12T20:58:23.2266809Z checking for netinet6/ip6_var.h... no
+2026-08-12T20:58:23.2495833Z checking for netipx/ipx.h... no
+2026-08-12T20:58:23.2679088Z checking for sys/un.h... yes
+2026-08-12T20:58:23.2913287Z checking for netinet/udp_var.h... no
+2026-08-12T20:58:23.3140658Z checking for netinet/icmp_var.h... no
+2026-08-12T20:58:23.3329784Z checking for netinet/icmp6.h... yes
+2026-08-12T20:58:23.3560934Z checking for netinet/tcp_var.h... no
+2026-08-12T20:58:23.3762648Z checking for linux/ipx.h... no
+2026-08-12T20:58:23.3966174Z checking for linux/irda.h... no
+2026-08-12T20:58:23.4140588Z checking for linux/rtnetlink.h... yes
+2026-08-12T20:58:23.4392560Z checking for resolv.h... yes
+2026-08-12T20:58:23.4568393Z checking for ifaddrs.h... yes
+2026-08-12T20:58:23.4778463Z checking for sys/ucontext.h... yes
+2026-08-12T20:58:23.5002999Z checking for sys/thr.h... no
+2026-08-12T20:58:23.5234373Z checking for pthread_np.h... no
+2026-08-12T20:58:23.5474189Z checking for linux/videodev2.h... yes
+2026-08-12T20:58:23.5686906Z checking for libprocstat.h... no
+2026-08-12T20:58:23.5878579Z checking for bluetooth/rfcomm.h... no
+2026-08-12T20:58:23.6083617Z checking whether getxattr takes additional arguments... no
+2026-08-12T20:58:23.6087954Z checking for ldd... /usr/bin/ldd
+2026-08-12T20:58:23.6093273Z checking for x86_64-linux-android28-otool... no
+2026-08-12T20:58:23.6098012Z checking for otool... no
+2026-08-12T20:58:23.6103528Z checking for x86_64-linux-android28-readelf... no
+2026-08-12T20:58:23.6107819Z checking for readelf... readelf
+2026-08-12T20:58:23.6388102Z checking whether the compiler supports -Wl,-z,defs... yes
+2026-08-12T20:58:23.6658346Z checking whether the compiler supports -fPIC -Wl,--export-dynamic... yes
+2026-08-12T20:58:23.6963279Z checking for -lGLESv2... libGLESv2.so.2
+2026-08-12T20:58:23.7315841Z checking for pthread_create... yes
+2026-08-12T20:58:23.7673098Z checking for -lEGL... libEGL.so.1
+2026-08-12T20:58:23.8020171Z checking how to run the C preprocessor... /home/runner/Android/Sdk/ndk/27.3.13750724/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-android28-clang -m64 -E
+2026-08-12T20:58:23.8673593Z checking for X... libraries , headers 
+2026-08-12T20:58:23.8996681Z checking for -lX11... libX11.so
+2026-08-12T20:58:23.9304972Z checking for -lXext... libXext.so
+2026-08-12T20:58:23.9306036Z checking for X11/extensions/shape.h... (cached) no
+2026-08-12T20:58:23.9308810Z checking for X11/extensions/XInput2.h... (cached) no
+2026-08-12T20:58:23.9309530Z checking for X11/extensions/XShm.h... (cached) no
+2026-08-12T20:58:23.9310774Z checking for X11/extensions/Xfixes.h... (cached) no
+2026-08-12T20:58:23.9312228Z checking for X11/extensions/Xinerama.h... (cached) no
+2026-08-12T20:58:23.9313558Z checking for X11/extensions/Xrandr.h... (cached) no
+2026-08-12T20:58:23.9314617Z checking for X11/extensions/Xrender.h... (cached) no
+2026-08-12T20:58:23.9315894Z checking for X11/extensions/xf86vmode.h... (cached) no
+2026-08-12T20:58:23.9318625Z checking for X11/extensions/xf86vmproto.h... (cached) no
+2026-08-12T20:58:23.9319274Z checking for X11/Xcursor/Xcursor.h... (cached) no
+2026-08-12T20:58:23.9319863Z checking for X11/extensions/XInput.h... (cached) no
+2026-08-12T20:58:23.9322064Z checking for X11/extensions/Xcomposite.h... (cached) no
+2026-08-12T20:58:23.9536229Z checking for XICCallback.callback... yes
+2026-08-12T20:58:23.9981561Z checking for XEvent.xcookie... yes
+2026-08-12T20:58:24.0299753Z checking for -lGL... libGL.so.1
+2026-08-12T20:58:24.0672722Z checking for gnutls/gnutls.h... yes
+2026-08-12T20:58:24.1236015Z checking for -lgnutls... libgnutls.so
+2026-08-12T20:58:24.1557377Z checking for gnutls_cipher_init... yes
+2026-08-12T20:58:24.2285518Z checking for resolver library... not found
+2026-08-12T20:58:24.2608098Z checking for ft2build.h... yes
+2026-08-12T20:58:24.2970247Z checking for -lfreetype... libfreetype.so
+2026-08-12T20:58:24.3313980Z checking for pthread_getthreadid_np... no
+2026-08-12T20:58:24.3667985Z checking for pulse/pulseaudio.h... yes
+2026-08-12T20:58:24.3969786Z checking for pa_stream_is_corked in -lpulse... yes
+2026-08-12T20:58:24.4954971Z checking for gst/gst.h... yes
+2026-08-12T20:58:24.5871306Z checking whether gint64 defined by gst/gst.h is indeed 64-bit... yes
+2026-08-12T20:58:24.6177271Z checking for gst_pad_new in -lgstreamer-1.0... yes
+2026-08-12T20:58:24.6525666Z checking for snd_pcm_hw_params_get_access_mask in -lasound... yes
+2026-08-12T20:58:24.7083363Z checking for SDL.h... yes
+2026-08-12T20:58:24.7396514Z checking for -lSDL2... libSDL2-2.0.so
+2026-08-12T20:58:24.7454928Z configure: error: fontconfig 64-bit development files not found, fontconfig won't be supported.
+2026-08-12T20:58:24.7456093Z This is an error since --with-fontconfig was requested.
+2026-08-12T20:58:24.7906772Z Applying patches...
+2026-08-12T20:58:24.7935657Z error: patch failed: dlls/nsiproxy.sys/ndis.c:104
+2026-08-12T20:58:24.7942826Z error: dlls/nsiproxy.sys/ndis.c: patch does not apply
+2026-08-12T20:58:24.7954392Z error: patch failed: dlls/nsiproxy.sys/ip.c:1499
+2026-08-12T20:58:24.7955272Z error: dlls/nsiproxy.sys/ip.c: patch does not apply
+2026-08-12T20:58:24.8008196Z error: dlls/ntdll/unix/esync.c: No such file or directory
+2026-08-12T20:58:24.8021904Z error: dlls/ntdll/unix/fsync.c: No such file or directory
+2026-08-12T20:58:24.8036898Z error: server/esync.c: No such file or directory
+2026-08-12T20:58:24.8052262Z error: server/fsync.c: No such file or directory
+2026-08-12T20:58:24.8069283Z error: patch failed: dlls/winex11.drv/x11drv.h:572
+2026-08-12T20:58:24.8069974Z error: dlls/winex11.drv/x11drv.h: patch does not apply
+2026-08-12T20:58:24.8123519Z error: patch failed: dlls/winex11.drv/mouse.c:1488
+2026-08-12T20:58:24.8124487Z error: dlls/winex11.drv/mouse.c: patch does not apply
+2026-08-12T20:58:24.8144466Z error: patch failed: dlls/winex11.drv/window.c:569
+2026-08-12T20:58:24.8145336Z error: dlls/winex11.drv/window.c: patch does not apply
+2026-08-12T20:58:24.8161202Z error: patch failed: dlls/winex11.drv/x11drv_main.c:202
+2026-08-12T20:58:24.8162368Z error: dlls/winex11.drv/x11drv_main.c: patch does not apply
+2026-08-12T20:58:24.8187549Z error: patch failed: dlls/ntdll/unix/virtual.c:404
+2026-08-12T20:58:24.8188429Z error: dlls/ntdll/unix/virtual.c: patch does not apply
+2026-08-12T20:58:24.8225500Z error: patch failed: dlls/ntdll/unix/signal_x86_64.c:2029
+2026-08-12T20:58:24.8226465Z error: dlls/ntdll/unix/signal_x86_64.c: patch does not apply
+2026-08-12T20:58:24.8245347Z error: patch failed: dlls/winepulse.drv/pulse.c:1732
+2026-08-12T20:58:24.8246250Z error: dlls/winepulse.drv/pulse.c: patch does not apply
+2026-08-12T20:58:24.8298279Z error: dlls/amd_ags_x64/unixlib.c: No such file or directory
+2026-08-12T20:58:24.8317263Z error: patch failed: dlls/winex11.drv/opengl.c:664
+2026-08-12T20:58:24.8318107Z error: dlls/winex11.drv/opengl.c: patch does not apply
+2026-08-12T20:58:24.8333820Z error: patch failed: dlls/advapi32/advapi.c:44
+2026-08-12T20:58:24.8334623Z error: dlls/advapi32/advapi.c: patch does not apply
+2026-08-12T20:58:24.8398770Z error: patch failed: dlls/user32/clipboard.c:33
+2026-08-12T20:58:24.8399603Z error: dlls/user32/clipboard.c: patch does not apply

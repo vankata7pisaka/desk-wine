@@ -136,6 +136,16 @@ jobs:
             build-scripts/build-step-x86_64.sh
           grep '^export RUNTIME_PATH=' build-scripts/build-step-x86_64.sh
 
+          # Измерено на билд #1 (2026-08-12): ./configure спира с "fontconfig
+          # 64-bit development files not found" — termux sysroot-ът тук няма
+          # каквото иска pkg-config за него. Fontconfig е само за избор на
+          # заместващ шрифт; Wine тръгва и без него. Desk и бездруго няма
+          # шрифтове в X сървъра си засега, така че няма какво да губим с
+          # изключването — само печелим Makefile, който изобщо да се направи.
+          sed -i 's/--with-fontconfig/--without-fontconfig/' \
+            build-scripts/build-step-x86_64.sh
+          grep -- '-fontconfig' build-scripts/build-step-x86_64.sh
+
       - name: Настройка
         working-directory: wine-src
         run: bash build-scripts/build-step-x86_64.sh --configure

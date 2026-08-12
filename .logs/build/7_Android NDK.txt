@@ -1,0 +1,23 @@
+﻿2026-08-12T20:57:05.8147543Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-08-12T20:57:05.8150501Z ##[group]Run actions/cache@v4
+2026-08-12T20:57:05.8150938Z with:
+2026-08-12T20:57:05.8151300Z   path: ~/Android/Sdk/ndk/27.3.13750724
+2026-08-12T20:57:05.8152105Z   key: android-ndk-r27d
+2026-08-12T20:57:05.8152425Z   enableCrossOsArchive: false
+2026-08-12T20:57:05.8152694Z   fail-on-cache-miss: false
+2026-08-12T20:57:05.8152944Z   lookup-only: false
+2026-08-12T20:57:05.8153186Z   save-always: false
+2026-08-12T20:57:05.8153399Z env:
+2026-08-12T20:57:05.8153597Z   WINE_REPO: GameNative/wine
+2026-08-12T20:57:05.8153838Z   NDK_VERSION: 27.3.13750724
+2026-08-12T20:57:05.8154297Z   LLVM_MINGW_VERSION: 20250920
+2026-08-12T20:57:05.8154569Z   TERMUXFS_REPO: GameNative/termux-on-gha
+2026-08-12T20:57:05.8154903Z   TERMUXFS_TAG: build-20260218
+2026-08-12T20:57:05.8155204Z   DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+2026-08-12T20:57:05.8155775Z   WINE_BRANCH: wine-11.3
+2026-08-12T20:57:05.8156166Z   WINE_VERSION: 11.3
+2026-08-12T20:57:05.8156526Z   WINE_SHA: f3761db
+2026-08-12T20:57:05.8156866Z ##[endgroup]
+2026-08-12T20:57:06.1276456Z (node:4521) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-08-12T20:57:06.1278312Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-08-12T20:57:06.3637827Z Cache not found for input keys: android-ndk-r27d

@@ -1,0 +1,19 @@
+﻿2026-08-12T20:58:16.7070770Z ##[group]Run # Рецептата на общността записва пътя на Termux. Desk няма Termux;
+2026-08-12T20:58:16.7072096Z [36;1m# Рецептата на общността записва пътя на Termux. Desk няма Termux;[0m
+2026-08-12T20:58:16.7072785Z [36;1m# има своя папка и тя се знае предварително.[0m
+2026-08-12T20:58:16.7073377Z [36;1msed -i "s|^export RUNTIME_PATH=.*|export RUNTIME_PATH=${DESK_RUNTIME}|" \[0m
+2026-08-12T20:58:16.7073842Z [36;1m  build-scripts/build-step-x86_64.sh[0m
+2026-08-12T20:58:16.7074246Z [36;1mgrep '^export RUNTIME_PATH=' build-scripts/build-step-x86_64.sh[0m
+2026-08-12T20:58:16.7117242Z shell: /usr/bin/bash -e {0}
+2026-08-12T20:58:16.7117507Z env:
+2026-08-12T20:58:16.7117711Z   WINE_REPO: GameNative/wine
+2026-08-12T20:58:16.7117969Z   NDK_VERSION: 27.3.13750724
+2026-08-12T20:58:16.7118210Z   LLVM_MINGW_VERSION: 20250920
+2026-08-12T20:58:16.7118482Z   TERMUXFS_REPO: GameNative/termux-on-gha
+2026-08-12T20:58:16.7118781Z   TERMUXFS_TAG: build-20260218
+2026-08-12T20:58:16.7119080Z   DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+2026-08-12T20:58:16.7119459Z   WINE_BRANCH: wine-11.3
+2026-08-12T20:58:16.7119682Z   WINE_VERSION: 11.3
+2026-08-12T20:58:16.7119891Z   WINE_SHA: f3761db
+2026-08-12T20:58:16.7120091Z ##[endgroup]
+2026-08-12T20:58:16.7218349Z export RUNTIME_PATH=/data/data/com.desk.shell/files/win/wine

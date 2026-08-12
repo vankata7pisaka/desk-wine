@@ -1,0 +1,15 @@
+﻿2026-08-12T20:55:28.8208017Z ##[group]Run sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost \
+2026-08-12T20:55:28.8209540Z [36;1msudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost \[0m
+2026-08-12T20:55:28.8210813Z [36;1m            /usr/local/lib/android "$AGENT_TOOLSDIRECTORY"[0m
+2026-08-12T20:55:28.8212075Z [36;1mdf -h /[0m
+2026-08-12T20:55:28.8260295Z shell: /usr/bin/bash -e {0}
+2026-08-12T20:55:28.8261246Z env:
+2026-08-12T20:55:28.8262250Z   WINE_REPO: GameNative/wine
+2026-08-12T20:55:28.8263169Z   NDK_VERSION: 27.3.13750724
+2026-08-12T20:55:28.8264091Z   LLVM_MINGW_VERSION: 20250920
+2026-08-12T20:55:28.8265010Z   TERMUXFS_REPO: GameNative/termux-on-gha
+2026-08-12T20:55:28.8265990Z   TERMUXFS_TAG: build-20260218
+2026-08-12T20:55:28.8267023Z   DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+2026-08-12T20:55:28.8268064Z ##[endgroup]
+2026-08-12T20:56:17.2670765Z Filesystem      Size  Used Avail Use% Mounted on
+2026-08-12T20:56:17.2671350Z /dev/root        72G   37G   36G  51% /

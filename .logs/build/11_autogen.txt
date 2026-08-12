@@ -1,0 +1,27 @@
+﻿2026-08-12T20:57:30.9841014Z ##[group]Run bash autogen.sh
+2026-08-12T20:57:30.9841595Z [36;1mbash autogen.sh[0m
+2026-08-12T20:57:30.9898848Z shell: /usr/bin/bash -e {0}
+2026-08-12T20:57:30.9899121Z env:
+2026-08-12T20:57:30.9899324Z   WINE_REPO: GameNative/wine
+2026-08-12T20:57:30.9899578Z   NDK_VERSION: 27.3.13750724
+2026-08-12T20:57:30.9899813Z   LLVM_MINGW_VERSION: 20250920
+2026-08-12T20:57:30.9900086Z   TERMUXFS_REPO: GameNative/termux-on-gha
+2026-08-12T20:57:30.9900391Z   TERMUXFS_TAG: build-20260218
+2026-08-12T20:57:30.9900708Z   DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+2026-08-12T20:57:30.9901044Z   WINE_BRANCH: wine-11.3
+2026-08-12T20:57:30.9901277Z   WINE_VERSION: 11.3
+2026-08-12T20:57:30.9901487Z   WINE_SHA: f3761db
+2026-08-12T20:57:30.9901981Z ##[endgroup]
+2026-08-12T20:57:31.8027164Z autoreconf: export WARNINGS=
+2026-08-12T20:57:31.8052308Z autoreconf: Entering directory '.'
+2026-08-12T20:57:31.8085205Z autoreconf: configure.ac: not using Gettext
+2026-08-12T20:57:31.8086160Z autoreconf: configure.ac: not using aclocal
+2026-08-12T20:57:31.8087036Z autoreconf: configure.ac: tracing
+2026-08-12T20:57:32.4681921Z autoreconf: configure.ac: not using Libtool
+2026-08-12T20:57:32.4682650Z autoreconf: configure.ac: not using Intltool
+2026-08-12T20:57:32.4693499Z autoreconf: configure.ac: not using Gtkdoc
+2026-08-12T20:57:32.4695995Z autoreconf: running: /usr/bin/autoconf --force
+2026-08-12T20:57:33.1089687Z autoreconf: running: /usr/bin/autoheader --force
+2026-08-12T20:57:33.6675153Z autoreconf: configure.ac: not using Automake
+2026-08-12T20:57:33.6861046Z autoreconf: Leaving directory '.'
+2026-08-12T20:57:33.6895355Z Now run ./configure

@@ -1,0 +1,969 @@
+﻿2026-08-12T20:57:33.6927471Z ##[group]Run mkdir -p wine-tools && cd wine-tools
+2026-08-12T20:57:33.6927906Z [36;1mmkdir -p wine-tools && cd wine-tools[0m
+2026-08-12T20:57:33.6928382Z [36;1m../configure --without-x --without-gstreamer --without-vulkan --without-wayland[0m
+2026-08-12T20:57:33.6928848Z [36;1mmake -j$(nproc) __tooldeps__ nls/all[0m
+2026-08-12T20:57:33.6971377Z shell: /usr/bin/bash -e {0}
+2026-08-12T20:57:33.6971921Z env:
+2026-08-12T20:57:33.6972179Z   WINE_REPO: GameNative/wine
+2026-08-12T20:57:33.6972438Z   NDK_VERSION: 27.3.13750724
+2026-08-12T20:57:33.6972672Z   LLVM_MINGW_VERSION: 20250920
+2026-08-12T20:57:33.6972935Z   TERMUXFS_REPO: GameNative/termux-on-gha
+2026-08-12T20:57:33.6973234Z   TERMUXFS_TAG: build-20260218
+2026-08-12T20:57:33.6973537Z   DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+2026-08-12T20:57:33.6973856Z   WINE_BRANCH: wine-11.3
+2026-08-12T20:57:33.6974074Z   WINE_VERSION: 11.3
+2026-08-12T20:57:33.6974275Z   WINE_SHA: f3761db
+2026-08-12T20:57:33.6974472Z ##[endgroup]
+2026-08-12T20:57:33.8908801Z checking build system type... x86_64-pc-linux-gnu
+2026-08-12T20:57:33.8909915Z checking host system type... x86_64-pc-linux-gnu
+2026-08-12T20:57:33.8917836Z checking for gcc... gcc
+2026-08-12T20:57:33.9772686Z checking whether the C compiler works... yes
+2026-08-12T20:57:33.9774230Z checking for C compiler default output file name... a.out
+2026-08-12T20:57:34.0054181Z checking for suffix of executables... 
+2026-08-12T20:57:34.0635242Z checking whether we are cross compiling... no
+2026-08-12T20:57:34.0800405Z checking for suffix of object files... o
+2026-08-12T20:57:34.0942459Z checking whether the compiler supports GNU C... yes
+2026-08-12T20:57:34.1127552Z checking whether gcc accepts -g... yes
+2026-08-12T20:57:34.2112643Z checking for gcc option to enable C11 features... none needed
+2026-08-12T20:57:34.2135654Z checking for g++... g++
+2026-08-12T20:57:34.3149099Z checking whether the compiler supports GNU C++... yes
+2026-08-12T20:57:34.3327043Z checking whether g++ accepts -g... yes
+2026-08-12T20:57:34.4696761Z checking for g++ option to enable C++11 features... none needed
+2026-08-12T20:57:34.4703230Z checking for cpp... cpp
+2026-08-12T20:57:34.4709106Z checking for ld... ld
+2026-08-12T20:57:34.5383902Z checking whether gcc -m32 works... yes
+2026-08-12T20:57:34.5387412Z checking for the directory containing the Wine tools... none needed
+2026-08-12T20:57:34.5393552Z checking for flex... flex
+2026-08-12T20:57:34.5681372Z checking whether flex is recent enough... yes
+2026-08-12T20:57:34.5683103Z checking for bison... bison
+2026-08-12T20:57:34.7542442Z checking whether bison is recent enough... yes
+2026-08-12T20:57:34.7550339Z checking for strip... strip
+2026-08-12T20:57:34.7551107Z checking whether ln -s works... yes
+2026-08-12T20:57:34.7554021Z checking for pkg-config... pkg-config
+2026-08-12T20:57:34.7554998Z checking for msgfmt... msgfmt
+2026-08-12T20:57:34.7579861Z checking whether msgfmt supports contexts... yes
+2026-08-12T20:57:34.7611301Z checking for i686-w64-mingw32-gcc... i686-w64-mingw32-gcc
+2026-08-12T20:57:34.7844312Z checking whether i686-w64-mingw32-gcc supports -target i686-windows -fuse-ld=lld -Wl,-subsystem:console -Wl,-WX --no-default-config... no
+2026-08-12T20:57:34.7988624Z checking whether i686-w64-mingw32-gcc supports -target i686-windows -fuse-ld=lld -Wl,-subsystem:console -Wl,-WX... no
+2026-08-12T20:57:34.8245160Z checking whether i686-w64-mingw32-gcc works... yes
+2026-08-12T20:57:34.8670462Z checking for i686-w64-mingw32-gcc option to enable C99 features... none needed
+2026-08-12T20:57:34.8971063Z checking whether i686-w64-mingw32-gcc supports -fno-strict-aliasing... yes
+2026-08-12T20:57:34.9256207Z checking whether i686-w64-mingw32-gcc supports -Werror=unknown-warning-option... no
+2026-08-12T20:57:34.9556840Z checking whether i686-w64-mingw32-gcc supports -Werror=unused-command-line-argument... no
+2026-08-12T20:57:34.9853561Z checking whether i686-w64-mingw32-gcc supports -Werror=ignored-optimization-argument... no
+2026-08-12T20:57:35.0158935Z checking whether i686-w64-mingw32-gcc supports -Werror=unsupported-floating-point-opt... no
+2026-08-12T20:57:35.0383554Z checking whether i686-w64-mingw32-gcc supports -Wdeclaration-after-statement... yes
+2026-08-12T20:57:35.0604379Z checking whether i686-w64-mingw32-gcc supports -Wempty-body... yes
+2026-08-12T20:57:35.0824785Z checking whether i686-w64-mingw32-gcc supports -Wignored-qualifiers... yes
+2026-08-12T20:57:35.1044659Z checking whether i686-w64-mingw32-gcc supports -Winit-self... yes
+2026-08-12T20:57:35.1269480Z checking whether i686-w64-mingw32-gcc supports -Wpacked-not-aligned... yes
+2026-08-12T20:57:35.1556769Z checking whether i686-w64-mingw32-gcc supports -Wmicrosoft-enum-forward-reference... no
+2026-08-12T20:57:35.1782596Z checking whether i686-w64-mingw32-gcc supports -Wshift-overflow=2... yes
+2026-08-12T20:57:35.2001302Z checking whether i686-w64-mingw32-gcc supports -Wstrict-prototypes... yes
+2026-08-12T20:57:35.2301467Z checking whether i686-w64-mingw32-gcc supports -Wtype-limits... yes
+2026-08-12T20:57:35.4129327Z checking whether i686-w64-mingw32-gcc supports -Wunused-but-set-parameter... yes
+2026-08-12T20:57:35.5087395Z checking whether i686-w64-mingw32-gcc supports -Wvla... yes
+2026-08-12T20:57:35.6623700Z checking whether i686-w64-mingw32-gcc supports -Wwrite-strings... yes
+2026-08-12T20:57:35.8086024Z checking whether i686-w64-mingw32-gcc supports -Wpointer-arith... yes
+2026-08-12T20:57:35.8564845Z checking whether i686-w64-mingw32-gcc supports -Wlogical-op... yes
+2026-08-12T20:57:36.1115839Z checking whether i686-w64-mingw32-gcc supports -Wabsolute-value... yes
+2026-08-12T20:57:36.1572407Z checking whether i686-w64-mingw32-gcc supports -Wenum-enum-conversion... no
+2026-08-12T20:57:36.2477591Z checking whether i686-w64-mingw32-gcc supports -Wenum-conversion... no
+2026-08-12T20:57:36.2709296Z checking whether i686-w64-mingw32-gcc supports -ffunction-sections... yes
+2026-08-12T20:57:36.2911209Z checking whether i686-w64-mingw32-gcc supports -fasync-exceptions -DMIN_CLANG_VERSION=19... no
+2026-08-12T20:57:36.3189968Z checking whether i686-w64-mingw32-gcc supports -ffp-exception-behavior=maytrap... no
+2026-08-12T20:57:36.3369344Z checking whether i686-w64-mingw32-gcc supports -fms-hotpatch -DMIN_CLANG_VERSION=18... no
+2026-08-12T20:57:36.3598658Z checking whether i686-w64-mingw32-gcc supports -flarge-source-files -Wmisleading-indentation... yes
+2026-08-12T20:57:36.3824809Z checking whether i686-w64-mingw32-gcc supports -fno-omit-frame-pointer... yes
+2026-08-12T20:57:36.4051522Z checking whether i686-w64-mingw32-gcc supports -mpreferred-stack-boundary=2... yes
+2026-08-12T20:57:36.4283751Z checking whether i686-w64-mingw32-gcc supports -mlong-double-64... yes
+2026-08-12T20:57:36.4504578Z checking whether i686-w64-mingw32-gcc supports -Wl,--disable-stdcall-fixup... yes
+2026-08-12T20:57:36.4763279Z checking whether i686-w64-mingw32-gcc supports -Wl,-debug:dwarf... no
+2026-08-12T20:57:36.4987746Z checking whether i686-w64-mingw32-gcc supports -gdwarf-4... yes
+2026-08-12T20:57:36.5263236Z checking for i386_set_ldt in -li386... no
+2026-08-12T20:57:36.5266893Z checking for special C compiler options needed for large files... no
+2026-08-12T20:57:36.5612438Z checking for _FILE_OFFSET_BITS value needed for large files... 64
+2026-08-12T20:57:36.5785261Z checking for stdio.h... yes
+2026-08-12T20:57:36.5986256Z checking for stdlib.h... yes
+2026-08-12T20:57:36.6209802Z checking for string.h... yes
+2026-08-12T20:57:36.6440748Z checking for inttypes.h... yes
+2026-08-12T20:57:36.6666990Z checking for stdint.h... yes
+2026-08-12T20:57:36.6896385Z checking for strings.h... yes
+2026-08-12T20:57:36.7134015Z checking for sys/stat.h... yes
+2026-08-12T20:57:36.7359761Z checking for sys/types.h... yes
+2026-08-12T20:57:36.7628076Z checking for unistd.h... yes
+2026-08-12T20:57:36.7921295Z checking for CL/cl.h... no
+2026-08-12T20:57:36.8209918Z checking for OpenCL/opencl.h... no
+2026-08-12T20:57:36.8517249Z checking for arpa/inet.h... yes
+2026-08-12T20:57:36.8843586Z checking for arpa/nameser.h... yes
+2026-08-12T20:57:36.9122743Z checking for asm/termbits.h... yes
+2026-08-12T20:57:36.9402800Z checking for asm/types.h... yes
+2026-08-12T20:57:36.9687886Z checking for asm/user.h... no
+2026-08-12T20:57:36.9977467Z checking for bluetooth/bluetooth.h... no
+2026-08-12T20:57:37.0263244Z checking for elf.h... yes
+2026-08-12T20:57:37.0550425Z checking for gettext-po.h... no
+2026-08-12T20:57:37.0839909Z checking for link.h... yes
+2026-08-12T20:57:37.1144393Z checking for linux/cdrom.h... yes
+2026-08-12T20:57:37.1417393Z checking for linux/filter.h... yes
+2026-08-12T20:57:37.1697476Z checking for linux/fs.h... yes
+2026-08-12T20:57:37.1971116Z checking for linux/hdreg.h... yes
+2026-08-12T20:57:37.2251592Z checking for linux/hidraw.h... yes
+2026-08-12T20:57:37.2543088Z checking for linux/input.h... yes
+2026-08-12T20:57:37.2817352Z checking for linux/ioctl.h... yes
+2026-08-12T20:57:37.3086183Z checking for linux/major.h... yes
+2026-08-12T20:57:37.3376992Z checking for linux/ntsync.h... no
+2026-08-12T20:57:37.3635077Z checking for linux/param.h... yes
+2026-08-12T20:57:37.3913633Z checking for linux/serial.h... yes
+2026-08-12T20:57:37.4182912Z checking for linux/types.h... yes
+2026-08-12T20:57:37.4472965Z checking for linux/ucdrom.h... no
+2026-08-12T20:57:37.4737871Z checking for linux/userfaultfd.h... yes
+2026-08-12T20:57:37.5046899Z checking for linux/wireless.h... yes
+2026-08-12T20:57:37.5330268Z checking for lwp.h... no
+2026-08-12T20:57:37.5616352Z checking for mach-o/loader.h... no
+2026-08-12T20:57:37.5906033Z checking for mach/mach.h... no
+2026-08-12T20:57:37.6199809Z checking for machine/cpu.h... no
+2026-08-12T20:57:37.6483370Z checking for machine/sysarch.h... no
+2026-08-12T20:57:37.6762663Z checking for mntent.h... yes
+2026-08-12T20:57:37.7066491Z checking for netdb.h... yes
+2026-08-12T20:57:37.7351557Z checking for netinet/in.h... yes
+2026-08-12T20:57:37.7612426Z checking for netinet/in_systm.h... yes
+2026-08-12T20:57:37.7897999Z checking for netinet/tcp.h... yes
+2026-08-12T20:57:37.8180151Z checking for netinet/tcp_fsm.h... no
+2026-08-12T20:57:37.8473467Z checking for pcap/pcap.h... no
+2026-08-12T20:57:37.8774625Z checking for port.h... no
+2026-08-12T20:57:37.9052616Z checking for pwd.h... yes
+2026-08-12T20:57:37.9332083Z checking for sched.h... yes
+2026-08-12T20:57:37.9596907Z checking for scsi/scsi.h... yes
+2026-08-12T20:57:37.9860650Z checking for scsi/scsi_ioctl.h... yes
+2026-08-12T20:57:38.0127182Z checking for scsi/sg.h... yes
+2026-08-12T20:57:38.0419538Z checking for sys/attr.h... no
+2026-08-12T20:57:38.0696626Z checking for sys/auxv.h... yes
+2026-08-12T20:57:38.0989496Z checking for sys/cdio.h... no
+2026-08-12T20:57:38.1269134Z checking for sys/epoll.h... yes
+2026-08-12T20:57:38.1570924Z checking for sys/event.h... no
+2026-08-12T20:57:38.1857367Z checking for sys/extattr.h... no
+2026-08-12T20:57:38.2149692Z checking for sys/filio.h... no
+2026-08-12T20:57:38.2412694Z checking for sys/ipc.h... yes
+2026-08-12T20:57:38.2706915Z checking for sys/link.h... no
+2026-08-12T20:57:38.2992739Z checking for sys/modem.h... no
+2026-08-12T20:57:38.3262923Z checking for sys/mtio.h... yes
+2026-08-12T20:57:38.3553117Z checking for sys/param.h... yes
+2026-08-12T20:57:38.3836991Z checking for sys/prctl.h... yes
+2026-08-12T20:57:38.4104054Z checking for sys/ptrace.h... yes
+2026-08-12T20:57:38.4372371Z checking for sys/queue.h... yes
+2026-08-12T20:57:38.4647449Z checking for sys/random.h... yes
+2026-08-12T20:57:38.4915508Z checking for sys/resource.h... yes
+2026-08-12T20:57:38.5205026Z checking for sys/scsiio.h... no
+2026-08-12T20:57:38.5484865Z checking for sys/shm.h... yes
+2026-08-12T20:57:38.5764981Z checking for sys/signal.h... yes
+2026-08-12T20:57:38.6045289Z checking for sys/socketvar.h... yes
+2026-08-12T20:57:38.6340358Z checking for sys/sockio.h... no
+2026-08-12T20:57:38.6597132Z checking for sys/statvfs.h... yes
+2026-08-12T20:57:38.6883916Z checking for sys/strtio.h... no
+2026-08-12T20:57:38.7150491Z checking for sys/syscall.h... yes
+2026-08-12T20:57:38.7422415Z checking for sys/sysinfo.h... yes
+2026-08-12T20:57:38.7680166Z checking for sys/times.h... yes
+2026-08-12T20:57:38.7944476Z checking for sys/uio.h... yes
+2026-08-12T20:57:38.8206311Z checking for sys/user.h... yes
+2026-08-12T20:57:38.8472534Z checking for sys/utsname.h... yes
+2026-08-12T20:57:38.8756807Z checking for sys/vnode.h... no
+2026-08-12T20:57:38.9033225Z checking for sys/xattr.h... yes
+2026-08-12T20:57:38.9312984Z checking for syscall.h... yes
+2026-08-12T20:57:38.9582510Z checking for utime.h... yes
+2026-08-12T20:57:38.9873296Z checking for valgrind/memcheck.h... no
+2026-08-12T20:57:39.0165479Z checking for valgrind/valgrind.h... no
+2026-08-12T20:57:39.0465677Z checking for sys/mkdev.h... no
+2026-08-12T20:57:39.0758802Z checking for sys/sysmacros.h... yes
+2026-08-12T20:57:39.0965376Z checking for sys/conf.h... no
+2026-08-12T20:57:39.1167636Z checking for sys/mount.h... yes
+2026-08-12T20:57:39.1342541Z checking for sys/statfs.h... yes
+2026-08-12T20:57:39.1354915Z checking for sys/user.h... (cached) yes
+2026-08-12T20:57:39.1519682Z checking for sys/vfs.h... yes
+2026-08-12T20:57:39.1711080Z checking for sys/sysctl.h... no
+2026-08-12T20:57:39.1888871Z checking for netinet/ip.h... yes
+2026-08-12T20:57:39.2065057Z checking for net/if.h... yes
+2026-08-12T20:57:39.2240793Z checking for net/if_arp.h... yes
+2026-08-12T20:57:39.2442830Z checking for net/if_dl.h... no
+2026-08-12T20:57:39.2641367Z checking for net/if_types.h... no
+2026-08-12T20:57:39.2822558Z checking for net/route.h... yes
+2026-08-12T20:57:39.3007620Z checking for netinet/if_ether.h... yes
+2026-08-12T20:57:39.3205024Z checking for netinet/in_pcb.h... no
+2026-08-12T20:57:39.3381398Z checking for netinet/ip_icmp.h... yes
+2026-08-12T20:57:39.3597392Z checking for netinet/ip_var.h... no
+2026-08-12T20:57:39.3773526Z checking for netinet/udp.h... yes
+2026-08-12T20:57:39.3976228Z checking for netinet6/ip6_var.h... no
+2026-08-12T20:57:39.4157648Z checking for netipx/ipx.h... yes
+2026-08-12T20:57:39.4354574Z checking for sys/un.h... yes
+2026-08-12T20:57:39.4557873Z checking for netinet/udp_var.h... no
+2026-08-12T20:57:39.4758187Z checking for netinet/icmp_var.h... no
+2026-08-12T20:57:39.4962791Z checking for netinet/icmp6.h... yes
+2026-08-12T20:57:39.5163859Z checking for netinet/tcp_var.h... no
+2026-08-12T20:57:39.5348790Z checking for linux/ipx.h... no
+2026-08-12T20:57:39.5534733Z checking for linux/irda.h... no
+2026-08-12T20:57:39.5729389Z checking for linux/rtnetlink.h... yes
+2026-08-12T20:57:39.5968021Z checking for resolv.h... yes
+2026-08-12T20:57:39.6127874Z checking for ifaddrs.h... yes
+2026-08-12T20:57:39.6275170Z checking for sys/ucontext.h... yes
+2026-08-12T20:57:39.6452595Z checking for sys/thr.h... no
+2026-08-12T20:57:39.6648675Z checking for pthread_np.h... no
+2026-08-12T20:57:39.6857684Z checking for linux/videodev2.h... yes
+2026-08-12T20:57:39.7077014Z checking for libprocstat.h... no
+2026-08-12T20:57:39.7213609Z checking for bluetooth/rfcomm.h... no
+2026-08-12T20:57:39.7379650Z checking whether getxattr takes additional arguments... no
+2026-08-12T20:57:39.7386118Z checking for ldd... /usr/bin/ldd
+2026-08-12T20:57:39.7392908Z checking for otool... no
+2026-08-12T20:57:39.7398818Z checking for readelf... readelf
+2026-08-12T20:57:39.7721076Z checking whether the compiler supports -fno-PIC -Wl,-z,notext... yes
+2026-08-12T20:57:39.8074423Z checking whether -Wl,-z,defs works correctly... yes
+2026-08-12T20:57:39.8389323Z checking whether the compiler supports -Wl,--export-dynamic... yes
+2026-08-12T20:57:39.8758969Z checking for pthread_create... yes
+2026-08-12T20:57:39.9151471Z checking for -lEGL... not found
+2026-08-12T20:57:39.9360904Z checking how to run the C preprocessor... gcc -m32 -E
+2026-08-12T20:57:39.9563641Z checking for X... disabled
+2026-08-12T20:57:39.9843825Z checking for SCardEstablishContext in -lpcsclite... no
+2026-08-12T20:57:40.0208754Z checking for sys/inotify.h... yes
+2026-08-12T20:57:40.0476781Z checking for inotify_add_watch in -linotify... no
+2026-08-12T20:57:40.0928637Z checking for gnutls/gnutls.h... no
+2026-08-12T20:57:40.1407214Z checking for libusb.h... no
+2026-08-12T20:57:40.1672863Z checking for -lv4l2... not found
+2026-08-12T20:57:40.2073633Z checking for gphoto2-camera.h... no
+2026-08-12T20:57:40.2498093Z checking for gphoto2-port.h... no
+2026-08-12T20:57:40.3599681Z checking for resolver library... -lresolv
+2026-08-12T20:57:40.4154046Z checking for res_getservers... no
+2026-08-12T20:57:40.4506771Z checking for ft2build.h... yes
+2026-08-12T20:57:40.6501928Z checking for -lfreetype... libfreetype.so.6
+2026-08-12T20:57:40.6887661Z checking for pthread_getthreadid_np... no
+2026-08-12T20:57:40.7378949Z checking for snd_pcm_hw_params_get_access_mask in -lasound... no
+2026-08-12T20:57:40.7693235Z checking for sys/soundcard.h... yes
+2026-08-12T20:57:40.8018994Z checking for oss_sysinfo.numaudioengines... no
+2026-08-12T20:57:40.8412380Z checking for libudev.h... no
+2026-08-12T20:57:40.8798825Z checking for SDL.h... no
+2026-08-12T20:57:40.9274732Z checking for cups/cups.h... no
+2026-08-12T20:57:40.9583724Z checking for cups/ppd.h... no
+2026-08-12T20:57:41.0010463Z checking for -lodbc... not found
+2026-08-12T20:57:41.0330212Z checking whether the compiler supports -Werror=unknown-warning-option... no
+2026-08-12T20:57:41.0572349Z checking whether the compiler supports -Werror=unused-command-line-argument... no
+2026-08-12T20:57:41.0820644Z checking whether the compiler supports -Werror=ignored-optimization-argument... no
+2026-08-12T20:57:41.1134665Z checking whether the compiler supports -fcf-protection=none... yes
+2026-08-12T20:57:41.1454384Z checking whether the compiler supports -fvisibility=hidden... yes
+2026-08-12T20:57:41.1768144Z checking whether the compiler supports -fno-stack-protector... yes
+2026-08-12T20:57:41.2079715Z checking whether the compiler supports -fno-strict-aliasing... yes
+2026-08-12T20:57:41.2391545Z checking whether the compiler supports -Wdeclaration-after-statement... yes
+2026-08-12T20:57:41.2701586Z checking whether the compiler supports -Wempty-body... yes
+2026-08-12T20:57:41.3012401Z checking whether the compiler supports -Wignored-qualifiers... yes
+2026-08-12T20:57:41.3318165Z checking whether the compiler supports -Winit-self... yes
+2026-08-12T20:57:41.3629944Z checking whether the compiler supports -Wlogical-op... yes
+2026-08-12T20:57:41.3942369Z checking whether the compiler supports -Wpacked-not-aligned... yes
+2026-08-12T20:57:41.4263716Z checking whether the compiler supports -Wpointer-arith... yes
+2026-08-12T20:57:41.4583982Z checking whether the compiler supports -Wshift-overflow=2... yes
+2026-08-12T20:57:41.4895112Z checking whether the compiler supports -Wstrict-prototypes... yes
+2026-08-12T20:57:41.5203875Z checking whether the compiler supports -Wtype-limits... yes
+2026-08-12T20:57:41.5510439Z checking whether the compiler supports -Wunused-but-set-parameter... yes
+2026-08-12T20:57:41.5823943Z checking whether the compiler supports -Wvla... yes
+2026-08-12T20:57:41.6143273Z checking whether the compiler supports -Wwrite-strings... yes
+2026-08-12T20:57:41.6455457Z checking whether the compiler supports -flarge-source-files -Wmisleading-indentation... yes
+2026-08-12T20:57:41.6606710Z checking for flags needed for 64-bit compare-and-swap support... none needed
+2026-08-12T20:57:41.6916479Z checking whether the compiler supports -gdwarf-4... yes
+2026-08-12T20:57:41.7226597Z checking whether the compiler supports -mlong-double-64... yes
+2026-08-12T20:57:41.7533352Z checking whether the compiler supports -fno-builtin... yes
+2026-08-12T20:57:41.7842911Z checking whether the compiler supports -fshort-wchar... yes
+2026-08-12T20:57:41.8158724Z checking whether the compiler supports -Wno-format... yes
+2026-08-12T20:57:41.8478469Z checking whether the compiler supports -fno-omit-frame-pointer... yes
+2026-08-12T20:57:41.8639176Z checking for the need to disable Fortify... yes
+2026-08-12T20:57:41.8795938Z checking whether CFI directives are supported in assembly code... yes
+2026-08-12T20:57:41.9132280Z checking for library containing dlopen... none required
+2026-08-12T20:57:41.9478382Z checking for dladdr1... yes
+2026-08-12T20:57:41.9809166Z checking for dlinfo... yes
+2026-08-12T20:57:42.0157875Z checking for epoll_create... yes
+2026-08-12T20:57:42.0513115Z checking for epoll_pwait2... yes
+2026-08-12T20:57:42.0855352Z checking for fstatfs... yes
+2026-08-12T20:57:42.1191026Z checking for futimens... yes
+2026-08-12T20:57:42.1530206Z checking for futimes... yes
+2026-08-12T20:57:42.1863611Z checking for futimesat... yes
+2026-08-12T20:57:42.2207768Z checking for getaddrinfo... yes
+2026-08-12T20:57:42.2612705Z checking for getattrlist... no
+2026-08-12T20:57:42.2944066Z checking for getauxval... yes
+2026-08-12T20:57:42.3277112Z checking for getifaddrs... yes
+2026-08-12T20:57:42.3612950Z checking for getrandom... yes
+2026-08-12T20:57:42.3993051Z checking for kqueue... no
+2026-08-12T20:57:42.4334533Z checking for pipe2... yes
+2026-08-12T20:57:42.4724504Z checking for port_create... no
+2026-08-12T20:57:42.5068721Z checking for posix_fadvise... yes
+2026-08-12T20:57:42.5413277Z checking for posix_fallocate... yes
+2026-08-12T20:57:42.5762333Z checking for prctl... yes
+2026-08-12T20:57:42.6133162Z checking for process_vm_readv... yes
+2026-08-12T20:57:42.6471030Z checking for process_vm_writev... yes
+2026-08-12T20:57:42.6825696Z checking for sched_getcpu... yes
+2026-08-12T20:57:42.7173003Z checking for sched_yield... yes
+2026-08-12T20:57:42.7572587Z checking for setproctitle... no
+2026-08-12T20:57:42.7962846Z checking for setprogname... no
+2026-08-12T20:57:42.8311370Z checking for sigprocmask... yes
+2026-08-12T20:57:42.8658411Z checking for sysinfo... yes
+2026-08-12T20:57:42.9003856Z checking for tcdrain... yes
+2026-08-12T20:57:42.9395817Z checking for thr_kill2... no
+2026-08-12T20:57:42.9733009Z checking for library containing clock_gettime... none required
+2026-08-12T20:57:43.0076922Z checking for sched_setaffinity... yes
+2026-08-12T20:57:43.0493466Z checking whether we can use re-entrant gethostbyname_r Linux style... yes
+2026-08-12T20:57:43.0894058Z checking for struct sockaddr_un.sun_len... no
+2026-08-12T20:57:43.1083435Z checking for sg_io_hdr_t.interface_id... yes
+2026-08-12T20:57:43.1302733Z checking for siginfo_t.si_fd... yes
+2026-08-12T20:57:43.1664211Z checking for struct mtget.mt_blksiz... no
+2026-08-12T20:57:43.1857953Z checking for struct mtget.mt_gstat... yes
+2026-08-12T20:57:43.2063666Z checking for struct mtget.mt_blkno... yes
+2026-08-12T20:57:43.2650575Z checking for struct stat.st_mtim... yes
+2026-08-12T20:57:43.3188439Z checking for struct stat.st_mtimespec... no
+2026-08-12T20:57:43.3741361Z checking for struct stat.st_ctim... yes
+2026-08-12T20:57:43.4284030Z checking for struct stat.st_ctimespec... no
+2026-08-12T20:57:43.4845045Z checking for struct stat.st_atim... yes
+2026-08-12T20:57:43.5389162Z checking for struct stat.st_atimespec... no
+2026-08-12T20:57:43.5926785Z checking for struct stat.st_birthtime... no
+2026-08-12T20:57:43.6458203Z checking for struct stat.st_birthtim... no
+2026-08-12T20:57:43.7002703Z checking for struct stat.st_birthtimespec... no
+2026-08-12T20:57:43.7535164Z checking for struct stat.__st_birthtime... no
+2026-08-12T20:57:43.8068057Z checking for struct stat.__st_birthtim... no
+2026-08-12T20:57:43.8291496Z checking for struct sockaddr_in6.sin6_scope_id... yes
+2026-08-12T20:57:43.8600303Z checking for struct __res_state._u._ext.nscount6... yes
+2026-08-12T20:57:43.9005969Z checking for struct in6_pktinfo.ipi6_addr... yes
+2026-08-12T20:57:43.9392231Z checking for struct ipstat.ips_total... no
+2026-08-12T20:57:43.9673240Z checking for struct ip_stats.ips_total... no
+2026-08-12T20:57:44.0056019Z checking for struct ip6stat.ip6s_total... no
+2026-08-12T20:57:44.0505449Z checking for struct icmpstat.icps_error... no
+2026-08-12T20:57:44.0928222Z checking for struct icmp6stat.icp6s_error... no
+2026-08-12T20:57:44.1338820Z checking for struct tcpstat.tcps_connattempt... no
+2026-08-12T20:57:44.1619157Z checking for struct tcp_stats.tcps_connattempt... no
+2026-08-12T20:57:44.2009513Z checking for struct udpstat.udps_ipackets... no
+2026-08-12T20:57:44.2398252Z checking for struct ifreq.ifr_hwaddr... yes
+2026-08-12T20:57:44.2570338Z checking for struct sysinfo.totalram... yes
+2026-08-12T20:57:44.2739979Z checking for struct sysinfo.mem_unit... yes
+2026-08-12T20:57:44.3056123Z checking for __builtin_popcount... yes
+2026-08-12T20:57:44.3372556Z checking for __clear_cache... yes
+2026-08-12T20:57:44.3510699Z checking whether we need to define __i386__... no
+2026-08-12T20:57:44.4891451Z creating Makefile rules... done
+2026-08-12T20:57:44.5363920Z configure: creating ./config.status
+2026-08-12T20:57:44.5784326Z config.status: creating include/config.h
+2026-08-12T20:57:44.5908828Z config.status: executing include/stamp-h commands
+2026-08-12T20:57:44.5952241Z config.status: executing tools/makedep commands
+2026-08-12T20:57:46.9625978Z config.status: executing Makefile commands
+2026-08-12T20:57:48.7517242Z 
+2026-08-12T20:57:48.7518857Z configure: EGL 32-bit development files not found
+2026-08-12T20:57:48.7519919Z configure: OpenCL 32-bit development files not found, OpenCL won't be supported.
+2026-08-12T20:57:48.7521057Z configure: pcap 32-bit development files not found, wpcap won't be supported.
+2026-08-12T20:57:48.7522402Z configure: libpcsclite not found, smart cards won't be supported.
+2026-08-12T20:57:48.7523471Z configure: libdbus 32-bit development files not found, no dynamic device support.
+2026-08-12T20:57:48.7524648Z configure: libsane 32-bit development files not found, scanners won't be supported.
+2026-08-12T20:57:48.7525886Z configure: libusb-1.0 32-bit development files not found (or too old), USB devices won't be supported.
+2026-08-12T20:57:48.7527100Z 
+2026-08-12T20:57:48.7527745Z configure: WARNING: libgnutls 32-bit development files not found, no schannel support.
+2026-08-12T20:57:48.7528591Z configure: libv4l2 32-bit development files not found.
+2026-08-12T20:57:48.7529202Z 
+2026-08-12T20:57:48.7529679Z configure: libgphoto2 32-bit development files not found, digital cameras won't be supported.
+2026-08-12T20:57:48.7530924Z configure: WARNING: No sound system was found. Windows applications will be silent.
+2026-08-12T20:57:48.7532333Z configure: libgphoto2_port 32-bit development files not found, digital cameras won't be auto-detected.
+2026-08-12T20:57:48.7533832Z configure: libpulse 32-bit development files not found or too old, Pulse won't be supported.
+2026-08-12T20:57:48.7534862Z configure: FFmpeg 32-bit development files not found.
+2026-08-12T20:57:48.7535836Z configure: libasound 32-bit development files not found, Alsa won't be supported.
+2026-08-12T20:57:48.7536930Z configure: OSS sound system found but too old (OSSv4 needed), OSS won't be supported.
+2026-08-12T20:57:48.7538142Z configure: libudev 32-bit development files not found, plug and play won't be supported.
+2026-08-12T20:57:48.7539267Z configure: libSDL2 32-bit development files not found, SDL2 won't be supported.
+2026-08-12T20:57:48.7540267Z configure: libcapi20 32-bit development files not found, ISDN won't be supported.
+2026-08-12T20:57:48.7541255Z configure: libcups 32-bit development files not found, CUPS won't be supported.
+2026-08-12T20:57:48.7542626Z configure: fontconfig 32-bit development files not found, fontconfig won't be supported.
+2026-08-12T20:57:48.7543794Z configure: libkrb5 32-bit development files not found (or too old), Kerberos won't be supported.
+2026-08-12T20:57:48.7544861Z configure: libnetapi not found, Samba NetAPI won't be supported.
+2026-08-12T20:57:48.7545406Z 
+2026-08-12T20:57:48.7545704Z configure: Finished.  Do 'make' to compile Wine.
+2026-08-12T20:57:48.7546153Z 
+2026-08-12T20:57:49.1460745Z gcc -m32 -c -o tools/install.o ../tools/install.c -Itools -I../tools -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:57:49.1467829Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:57:49.1482813Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:57:49.1484511Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:57:49.1485905Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:57:49.1487012Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:49.1488554Z gcc -m32 -c -o tools/make_xftmpl.o ../tools/make_xftmpl.c -Itools -I../tools -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:57:49.1489943Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:57:49.1491262Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:57:49.1492914Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:57:49.1495067Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:57:49.1496204Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:49.5268062Z gcc -m32 -c -o tools/sfnt2fon/sfnt2fon.o ../tools/sfnt2fon/sfnt2fon.c -Itools/sfnt2fon -I../tools/sfnt2fon -Iinclude \
+2026-08-12T20:57:49.5283824Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -I/usr/include/freetype2 -I/usr/include/libpng16 -Wall \
+2026-08-12T20:57:49.5285264Z   -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector -fno-strict-aliasing \
+2026-08-12T20:57:49.5311616Z   -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self -Wlogical-op \
+2026-08-12T20:57:49.5342708Z   -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits \
+2026-08-12T20:57:49.5344778Z   -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:49.5549684Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/widl/widl.man.in >tools/widl/widl.man || (rm -f tools/widl/widl.man && false)
+2026-08-12T20:57:49.5573096Z bison -o tools/widl/parser.tab.$$.c --defines=tools/widl/parser.tab.h ../tools/widl/parser.y && rm -f tools/widl/parser.tab.$$.c
+2026-08-12T20:57:50.2214907Z gcc -m32 -c -o tools/widl/client.o ../tools/widl/client.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:50.2222850Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:50.2242654Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:50.2244295Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:50.2262595Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:50.2282698Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:50.3440177Z gcc -m32 -c -o tools/widl/expr.o ../tools/widl/expr.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:50.3443963Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:50.3445533Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:50.3447114Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:50.3448551Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:50.3450024Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:50.5884228Z gcc -m32 -c -o tools/widl/hash.o ../tools/widl/hash.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:50.5894390Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:50.5912608Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:50.5922683Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:50.5942788Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:50.5962798Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:50.7093073Z gcc -m32 -c -o tools/widl/header.o ../tools/widl/header.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:50.7102582Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:50.7103826Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:50.7104947Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:50.7106044Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:50.7107210Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:50.9613236Z gcc -m32 -c -o tools/widl/metadata.o ../tools/widl/metadata.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:50.9622637Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:50.9640440Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:50.9662796Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:50.9682630Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:50.9684467Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:52.0860511Z gcc -m32 -c -o tools/widl/proxy.o ../tools/widl/proxy.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:52.0874397Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:52.0892801Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:52.0920717Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:52.0952820Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:52.0954417Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:52.7293252Z gcc -m32 -c -o tools/widl/register.o ../tools/widl/register.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:52.7312751Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:52.7325711Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:52.7352703Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:52.7372615Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:52.7392684Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:52.8662232Z gcc -m32 -c -o tools/widl/server.o ../tools/widl/server.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:52.8682669Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:52.8722639Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:52.8732948Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:52.8762647Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:52.8772799Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:52.9972951Z gcc -m32 -c -o tools/widl/typegen.o ../tools/widl/typegen.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:52.9987095Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:53.0002632Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:53.0022662Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:53.0049958Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:53.0072677Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:53.2630628Z gcc -m32 -c -o tools/widl/typelib.o ../tools/widl/typelib.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:53.2652792Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:53.2663312Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:53.2683300Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:53.2692772Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:53.2712770Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:53.5432448Z gcc -m32 -c -o tools/widl/typetree.o ../tools/widl/typetree.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:53.5452787Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:53.5465828Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:53.5504777Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:53.5512768Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:53.5522931Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:54.4274277Z gcc -m32 -c -o tools/widl/utils.o ../tools/widl/utils.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:54.4302556Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:54.4323026Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:54.4342626Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:54.4362500Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:54.4372758Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:54.7312987Z gcc -m32 -c -o tools/widl/widl.o ../tools/widl/widl.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:54.7333036Z   -I../include -D__WINESRC__ -DINCLUDEDIR="\"/usr/local/include\"" -DBINDIR="\"/usr/local/bin\"" \
+2026-08-12T20:57:54.7352897Z   -DLIBDIR="\"/usr/local/lib\"" -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:54.7372826Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:54.7382666Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:54.7392637Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:54.7412619Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:55.3947287Z gcc -m32 -c -o tools/widl/wpp.o ../tools/wrc/wpp.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:55.4135959Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:55.4333061Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:55.4513069Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:55.4702932Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:55.4742622Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:55.7434159Z gcc -m32 -c -o tools/widl/write_msft.o ../tools/widl/write_msft.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:55.7633378Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:55.7832918Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:55.7852636Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:55.8063360Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:55.8092699Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:55.9827265Z gcc -m32 -c -o tools/widl/write_sltg.o ../tools/widl/write_sltg.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:57:55.9902429Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:56.0183252Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:56.0204775Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:56.0443150Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:56.0462642Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:56.8416080Z flex -otools/widl/parser.yy.c ../tools/widl/parser.l
+2026-08-12T20:57:56.8416906Z bison -o tools/widl/parser.tab.c ../tools/widl/parser.y
+2026-08-12T20:57:57.0353265Z flex -otools/widl/ppl.yy.c ../tools/wrc/ppl.l
+2026-08-12T20:57:57.0354997Z bison -o tools/widl/ppy.tab.$$.c --defines=tools/widl/ppy.tab.h ../tools/wrc/ppy.y && rm -f tools/widl/ppy.tab.$$.c
+2026-08-12T20:57:57.1882748Z bison -o tools/widl/ppy.tab.c ../tools/wrc/ppy.y
+2026-08-12T20:57:57.3345580Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/wine/wine.de.UTF-8.man.in >tools/wine/wine.de.UTF-8.man || (rm -f tools/wine/wine.de.UTF-8.man && false)
+2026-08-12T20:57:57.3348852Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/wine/wine.fr.UTF-8.man.in >tools/wine/wine.fr.UTF-8.man || (rm -f tools/wine/wine.fr.UTF-8.man && false)
+2026-08-12T20:57:57.3533696Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/wine/wine.man.in >tools/wine/wine.man || (rm -f tools/wine/wine.man && false)
+2026-08-12T20:57:57.3539218Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/wine/wine.pl.UTF-8.man.in >tools/wine/wine.pl.UTF-8.man || (rm -f tools/wine/wine.pl.UTF-8.man && false)
+2026-08-12T20:57:57.3733294Z gcc -m32 -c -o tools/wine/wine.o ../tools/wine/wine.c -Itools/wine -I../tools/wine -Iinclude -I../include \
+2026-08-12T20:57:57.3752566Z   -D__WINESRC__ -DBINDIR="\"/usr/local/bin\"" -DLIBDIR="\"/usr/local/lib\"" -DWINE_UNIX_LIB -Wall -pipe \
+2026-08-12T20:57:57.3932981Z   -fcf-protection=none -fvisibility=hidden -fno-stack-protector -fno-strict-aliasing \
+2026-08-12T20:57:57.3943823Z   -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self -Wlogical-op \
+2026-08-12T20:57:57.3952684Z   -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits \
+2026-08-12T20:57:57.3972909Z   -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:57.4629612Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/winebuild/winebuild.man.in >tools/winebuild/winebuild.man || (rm -f tools/winebuild/winebuild.man && false)
+2026-08-12T20:57:57.4656786Z gcc -m32 -c -o tools/winebuild/import.o ../tools/winebuild/import.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:57.4662935Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:57.4664412Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:57.4665803Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:57.4667159Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:57.4668606Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:57.4752943Z gcc -m32 -c -o tools/winebuild/main.o ../tools/winebuild/main.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:57.4755920Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:57.4759361Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:57.4760803Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:57.4762493Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:57.4763987Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:57.8755036Z gcc -m32 -c -o tools/winebuild/parser.o ../tools/winebuild/parser.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:57.8756871Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:57.8792603Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:57.8820157Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:57.8832710Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:57.8842878Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:58.4253067Z gcc -m32 -c -o tools/winebuild/relay.o ../tools/winebuild/relay.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:58.4272551Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:58.4292528Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:58.4311367Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:58.4332541Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:58.4352604Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:58.5293354Z gcc -m32 -c -o tools/winebuild/res16.o ../tools/winebuild/res16.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:58.5302656Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:58.5312706Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:58.5352657Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:58.5362549Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:58.5382633Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:58.5800645Z gcc -m32 -c -o tools/winebuild/res32.o ../tools/winebuild/res32.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:58.5804353Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:58.5824159Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:58.5825825Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:58.5827313Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:58.5828879Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:58.8019245Z gcc -m32 -c -o tools/winebuild/spec16.o ../tools/winebuild/spec16.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:58.8034533Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:58.8062918Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:58.8092696Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:58.8102924Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:58.8112897Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:59.3154324Z gcc -m32 -c -o tools/winebuild/spec32.o ../tools/winebuild/spec32.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:59.3172673Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:59.3202980Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:59.3212527Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:59.3232890Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:59.3252762Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:57:59.5285853Z gcc -m32 -c -o tools/winebuild/utils.o ../tools/winebuild/utils.c -Itools/winebuild -I../tools/winebuild -Iinclude \
+2026-08-12T20:57:59.5287410Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:57:59.5288981Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:57:59.5290503Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:57:59.5292157Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:57:59.5293486Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:00.2229664Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/winedump/winedump.man.in >tools/winedump/winedump.man || (rm -f tools/winedump/winedump.man && false)
+2026-08-12T20:58:00.2252798Z gcc -m32 -c -o tools/winedump/debug.o ../tools/winedump/debug.c -Itools/winedump -I../tools/winedump -Iinclude \
+2026-08-12T20:58:00.2255739Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:00.2257258Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:00.2258541Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:00.2259813Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:00.2262738Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:00.5439626Z gcc -m32 -c -o tools/winedump/dos.o ../tools/winedump/dos.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:00.5452605Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:00.5462606Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:00.5492655Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:00.5512763Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:00.5532822Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:00.6664355Z gcc -m32 -c -o tools/winedump/dump.o ../tools/winedump/dump.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:00.6665709Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:00.6666861Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:00.6668005Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:00.6669166Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:00.6670678Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:00.8613770Z gcc -m32 -c -o tools/winedump/emf.o ../tools/winedump/emf.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:00.8618697Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:00.8813068Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:00.8993214Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:00.9102687Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:00.9142654Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:00.9383804Z gcc -m32 -c -o tools/winedump/emfspool.o ../tools/winedump/emfspool.c -Itools/winedump -I../tools/winedump -Iinclude \
+2026-08-12T20:58:00.9583480Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:00.9763100Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:00.9943064Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:00.9962571Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.0143751Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:01.0843366Z gcc -m32 -c -o tools/winedump/font.o ../tools/winedump/font.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:01.1022970Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:01.1024157Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:01.1242899Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:01.1422977Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.1424279Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:01.1813629Z gcc -m32 -c -o tools/winedump/le.o ../tools/winedump/le.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:01.1992976Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:01.1994540Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:01.2212968Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:01.2393171Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.2394573Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:01.2633290Z gcc -m32 -c -o tools/winedump/lib.o ../tools/winedump/lib.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:01.2813064Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:01.2814260Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:01.3022831Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:01.3193123Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.3194524Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:01.3707137Z gcc -m32 -c -o tools/winedump/lnk.o ../tools/winedump/lnk.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:01.3883441Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:01.3885143Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:01.3902735Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:01.3922692Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.3932579Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:01.4390612Z gcc -m32 -c -o tools/winedump/main.o ../tools/winedump/main.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:01.4402816Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:01.4423598Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:01.4442671Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:01.4452642Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.4482732Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:01.6342396Z gcc -m32 -c -o tools/winedump/mf.o ../tools/winedump/mf.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:01.6352582Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:01.6372893Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:01.6383089Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:01.6392776Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.6412901Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:01.7273275Z gcc -m32 -c -o tools/winedump/minidump.o ../tools/winedump/minidump.c -Itools/winedump -I../tools/winedump -Iinclude \
+2026-08-12T20:58:01.7286680Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:01.7288188Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:01.7289522Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:01.7290924Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.7293538Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:01.8260724Z gcc -m32 -c -o tools/winedump/misc.o ../tools/winedump/misc.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:01.8264370Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:01.8265832Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:01.8267277Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:01.8268614Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:01.8270071Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:02.0152618Z gcc -m32 -c -o tools/winedump/msc.o ../tools/winedump/msc.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:02.0172557Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:02.0192516Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:02.0202774Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:02.0233232Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:02.0252750Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:02.2461246Z gcc -m32 -c -o tools/winedump/msmangle.o ../tools/winedump/msmangle.c -Itools/winedump -I../tools/winedump -Iinclude \
+2026-08-12T20:58:02.2463100Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:02.2464415Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:02.2465891Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:02.2467252Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:02.2470714Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:02.9365127Z gcc -m32 -c -o tools/winedump/ne.o ../tools/winedump/ne.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:02.9372575Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:02.9392551Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:02.9422706Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:02.9432533Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:02.9452567Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:03.1029145Z gcc -m32 -c -o tools/winedump/nls.o ../tools/winedump/nls.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:03.1043794Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:03.1045220Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:03.1046683Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:03.1048091Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:03.1049536Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:03.5753297Z gcc -m32 -c -o tools/winedump/output.o ../tools/winedump/output.c -Itools/winedump -I../tools/winedump -Iinclude \
+2026-08-12T20:58:03.5762725Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:03.5782540Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:03.5822589Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:03.5842501Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:03.5862605Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:03.7814108Z gcc -m32 -c -o tools/winedump/pdb.o ../tools/winedump/pdb.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:03.7832733Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:03.7835579Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:03.7852649Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:03.7880105Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:03.7892831Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:03.8384799Z gcc -m32 -c -o tools/winedump/pe.o ../tools/winedump/pe.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:03.8392562Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:03.8422730Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:03.8442729Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:03.8452669Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:03.8472660Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:04.5299792Z gcc -m32 -c -o tools/winedump/reg.o ../tools/winedump/reg.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:04.5312541Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:04.5342711Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:04.5372876Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:04.5374712Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:04.5392837Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:04.7348119Z gcc -m32 -c -o tools/winedump/search.o ../tools/winedump/search.c -Itools/winedump -I../tools/winedump -Iinclude \
+2026-08-12T20:58:04.7380354Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:04.7402625Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:04.7442680Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:04.7462658Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:04.7463960Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:04.9582980Z gcc -m32 -c -o tools/winedump/symbol.o ../tools/winedump/symbol.c -Itools/winedump -I../tools/winedump -Iinclude \
+2026-08-12T20:58:04.9584288Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:04.9585434Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:04.9586566Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:04.9587964Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:04.9589193Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:05.1453905Z gcc -m32 -c -o tools/winedump/tlb.o ../tools/winedump/tlb.c -Itools/winedump -I../tools/winedump -Iinclude -I../include \
+2026-08-12T20:58:05.1455343Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:05.1653514Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:05.1843389Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:05.1845153Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:05.2043837Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:06.6990477Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/winegcc/winegcc.man.in >tools/winegcc/winegcc.man || (rm -f tools/winegcc/winegcc.man && false)
+2026-08-12T20:58:06.7032806Z gcc -m32 -c -o tools/winegcc/winegcc.o ../tools/winegcc/winegcc.c -Itools/winegcc -I../tools/winegcc -Iinclude -I../include \
+2026-08-12T20:58:06.7034602Z   -D__WINESRC__ -DINCLUDEDIR="\"/usr/local/include\"" -DBINDIR="\"/usr/local/bin\"" -DLIBDIR="\"/usr/local/lib\"" \
+2026-08-12T20:58:06.7072573Z   -DCC="\"gcc -m32\"" -DCPP="\"cpp\"" -DCXX="\"g++ -m32\"" -DLD="\"ld\"" -DWINE_UNIX_LIB -Wall -pipe \
+2026-08-12T20:58:06.7090784Z   -fcf-protection=none -fvisibility=hidden -fno-stack-protector -fno-strict-aliasing \
+2026-08-12T20:58:06.7112537Z   -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self -Wlogical-op \
+2026-08-12T20:58:06.7114076Z   -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits \
+2026-08-12T20:58:06.7132815Z   -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:06.8063095Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/winemaker/winemaker.de.UTF-8.man.in >tools/winemaker/winemaker.de.UTF-8.man || (rm -f tools/winemaker/winemaker.de.UTF-8.man && false)
+2026-08-12T20:58:06.8113655Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/winemaker/winemaker.fr.UTF-8.man.in >tools/winemaker/winemaker.fr.UTF-8.man || (rm -f tools/winemaker/winemaker.fr.UTF-8.man && false)
+2026-08-12T20:58:06.8153348Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/winemaker/winemaker.man.in >tools/winemaker/winemaker.man || (rm -f tools/winemaker/winemaker.man && false)
+2026-08-12T20:58:06.8193116Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/wmc/wmc.man.in >tools/wmc/wmc.man || (rm -f tools/wmc/wmc.man && false)
+2026-08-12T20:58:06.8232732Z gcc -m32 -c -o tools/wmc/lang.o ../tools/wmc/lang.c -Itools/wmc -I../tools/wmc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:06.8234151Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:06.8252682Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:06.8262661Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:06.8272665Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:06.8273679Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:06.9240476Z bison -o tools/wmc/mcy.tab.$$.c --defines=tools/wmc/mcy.tab.h ../tools/wmc/mcy.y && rm -f tools/wmc/mcy.tab.$$.c
+2026-08-12T20:58:07.0389640Z gcc -m32 -c -o tools/wmc/po.o ../tools/wmc/po.c -Itools/wmc -I../tools/wmc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:07.0403007Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:07.0422640Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:07.0442578Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:07.0464810Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:07.0482565Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:07.3190036Z gcc -m32 -c -o tools/wmc/utils.o ../tools/wmc/utils.c -Itools/wmc -I../tools/wmc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:07.3202523Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:07.3222621Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:07.3242587Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:07.3261619Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:07.3282493Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:07.6255587Z gcc -m32 -c -o tools/wmc/wmc.o ../tools/wmc/wmc.c -Itools/wmc -I../tools/wmc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:07.6282620Z   -DBINDIR="\"/usr/local/bin\"" -DDATADIR="\"/usr/local/share\"" -DWINE_UNIX_LIB -Wall -pipe \
+2026-08-12T20:58:07.6302584Z   -fcf-protection=none -fvisibility=hidden -fno-stack-protector -fno-strict-aliasing \
+2026-08-12T20:58:07.6342629Z   -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self -Wlogical-op \
+2026-08-12T20:58:07.6362715Z   -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits \
+2026-08-12T20:58:07.6382812Z   -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:07.9103011Z gcc -m32 -c -o tools/wmc/write.o ../tools/wmc/write.c -Itools/wmc -I../tools/wmc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:07.9142625Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:07.9162780Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:07.9182655Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:07.9183940Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:07.9184892Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:08.3568605Z bison -o tools/wmc/mcy.tab.c ../tools/wmc/mcy.y
+2026-08-12T20:58:08.3637675Z LC_ALL=C sed -e 's,@bindir@,/usr/local/bin,g' -e 's,@PACKAGE_STRING@,Wine 11.3,g' -e 's,@PACKAGE_VERSION@,11.3,g' ../tools/wrc/wrc.man.in >tools/wrc/wrc.man || (rm -f tools/wrc/wrc.man && false)
+2026-08-12T20:58:08.3662623Z gcc -m32 -c -o tools/wrc/genres.o ../tools/wrc/genres.c -Itools/wrc -I../tools/wrc -Iinclude -I../include \
+2026-08-12T20:58:08.3675752Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:08.3712458Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:08.3732578Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:08.3742580Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:08.3752880Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:08.4654712Z gcc -m32 -c -o tools/wrc/newstruc.o ../tools/wrc/newstruc.c -Itools/wrc -I../tools/wrc -Iinclude -I../include \
+2026-08-12T20:58:08.4663299Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:08.4682542Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:08.4702501Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:08.4732744Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:08.4742601Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:08.8142199Z gcc -m32 -c -o tools/wrc/po.o ../tools/wrc/po.c -Itools/wrc -I../tools/wrc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:08.8153885Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:08.8182750Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:08.8211490Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:08.8222759Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:08.8242391Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:09.2724022Z gcc -m32 -c -o tools/wrc/utils.o ../tools/wrc/utils.c -Itools/wrc -I../tools/wrc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:09.2742804Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:09.2775918Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:09.2802981Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:09.2822817Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:09.2824385Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:09.6438279Z gcc -m32 -c -o tools/wrc/wpp.o ../tools/wrc/wpp.c -Itools/wrc -I../tools/wrc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:09.6454032Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:09.6472637Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:09.6492577Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:09.6512566Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:09.6532430Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:09.7343300Z gcc -m32 -c -o tools/wrc/wrc.o ../tools/wrc/wrc.c -Itools/wrc -I../tools/wrc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:09.7345162Z   -DBINDIR="\"/usr/local/bin\"" -DDATADIR="\"/usr/local/share\"" -DINCLUDEDIR="\"/usr/local/include\"" \
+2026-08-12T20:58:09.7349283Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:09.7351282Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:09.7353523Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:09.7355030Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:09.7356203Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:10.0077401Z flex -otools/wrc/parser.yy.c ../tools/wrc/parser.l
+2026-08-12T20:58:10.0079093Z bison -o tools/wrc/parser.tab.$$.c --defines=tools/wrc/parser.tab.h ../tools/wrc/parser.y && rm -f tools/wrc/parser.tab.$$.c
+2026-08-12T20:58:10.0322897Z ../tools/wrc/parser.y: warning: 5 shift/reduce conflicts [-Wconflicts-sr]
+2026-08-12T20:58:10.0324689Z ../tools/wrc/parser.y: note: rerun with option '-Wcounterexamples' to generate conflict counterexamples
+2026-08-12T20:58:10.1453377Z ../tools/wrc/parser.y: warning: 5 shift/reduce conflicts [-Wconflicts-sr]
+2026-08-12T20:58:10.1454251Z bison -o tools/wrc/parser.tab.c ../tools/wrc/parser.y
+2026-08-12T20:58:10.1455789Z ../tools/wrc/parser.y: note: rerun with option '-Wcounterexamples' to generate conflict counterexamples
+2026-08-12T20:58:10.4203209Z flex -otools/wrc/ppl.yy.c ../tools/wrc/ppl.l
+2026-08-12T20:58:10.4204699Z bison -o tools/wrc/ppy.tab.$$.c --defines=tools/wrc/ppy.tab.h ../tools/wrc/ppy.y && rm -f tools/wrc/ppy.tab.$$.c
+2026-08-12T20:58:10.5363347Z bison -o tools/wrc/ppy.tab.c ../tools/wrc/ppy.y
+2026-08-12T20:58:10.5722483Z rm -f nls/c_037.nls && ln -s ../../nls/c_037.nls nls/c_037.nls
+2026-08-12T20:58:10.5923158Z rm -f nls/c_10000.nls && ln -s ../../nls/c_10000.nls nls/c_10000.nls
+2026-08-12T20:58:10.6123112Z rm -f nls/c_10001.nls && ln -s ../../nls/c_10001.nls nls/c_10001.nls
+2026-08-12T20:58:10.6283242Z rm -f nls/c_10002.nls && ln -s ../../nls/c_10002.nls nls/c_10002.nls
+2026-08-12T20:58:10.6296163Z rm -f nls/c_10003.nls && ln -s ../../nls/c_10003.nls nls/c_10003.nls
+2026-08-12T20:58:10.6297213Z rm -f nls/c_10004.nls && ln -s ../../nls/c_10004.nls nls/c_10004.nls
+2026-08-12T20:58:10.6322360Z rm -f nls/c_10005.nls && ln -s ../../nls/c_10005.nls nls/c_10005.nls
+2026-08-12T20:58:10.6331586Z rm -f nls/c_10006.nls && ln -s ../../nls/c_10006.nls nls/c_10006.nls
+2026-08-12T20:58:10.6332773Z rm -f nls/c_10007.nls && ln -s ../../nls/c_10007.nls nls/c_10007.nls
+2026-08-12T20:58:10.6333614Z rm -f nls/c_10008.nls && ln -s ../../nls/c_10008.nls nls/c_10008.nls
+2026-08-12T20:58:10.6334402Z rm -f nls/c_10010.nls && ln -s ../../nls/c_10010.nls nls/c_10010.nls
+2026-08-12T20:58:10.6344838Z rm -f nls/c_10017.nls && ln -s ../../nls/c_10017.nls nls/c_10017.nls
+2026-08-12T20:58:10.6353033Z rm -f nls/c_10021.nls && ln -s ../../nls/c_10021.nls nls/c_10021.nls
+2026-08-12T20:58:10.6363152Z rm -f nls/c_10029.nls && ln -s ../../nls/c_10029.nls nls/c_10029.nls
+2026-08-12T20:58:10.6363927Z rm -f nls/c_10079.nls && ln -s ../../nls/c_10079.nls nls/c_10079.nls
+2026-08-12T20:58:10.6364650Z rm -f nls/c_10081.nls && ln -s ../../nls/c_10081.nls nls/c_10081.nls
+2026-08-12T20:58:10.6365349Z rm -f nls/c_10082.nls && ln -s ../../nls/c_10082.nls nls/c_10082.nls
+2026-08-12T20:58:10.6366051Z rm -f nls/c_1026.nls && ln -s ../../nls/c_1026.nls nls/c_1026.nls
+2026-08-12T20:58:10.6366719Z rm -f nls/c_1250.nls && ln -s ../../nls/c_1250.nls nls/c_1250.nls
+2026-08-12T20:58:10.6367378Z rm -f nls/c_1251.nls && ln -s ../../nls/c_1251.nls nls/c_1251.nls
+2026-08-12T20:58:10.6368035Z rm -f nls/c_1252.nls && ln -s ../../nls/c_1252.nls nls/c_1252.nls
+2026-08-12T20:58:10.6368694Z rm -f nls/c_1253.nls && ln -s ../../nls/c_1253.nls nls/c_1253.nls
+2026-08-12T20:58:10.6369359Z rm -f nls/c_1254.nls && ln -s ../../nls/c_1254.nls nls/c_1254.nls
+2026-08-12T20:58:10.6370026Z rm -f nls/c_1255.nls && ln -s ../../nls/c_1255.nls nls/c_1255.nls
+2026-08-12T20:58:10.6370710Z rm -f nls/c_1256.nls && ln -s ../../nls/c_1256.nls nls/c_1256.nls
+2026-08-12T20:58:10.6371376Z rm -f nls/c_1257.nls && ln -s ../../nls/c_1257.nls nls/c_1257.nls
+2026-08-12T20:58:10.6372350Z rm -f nls/c_1258.nls && ln -s ../../nls/c_1258.nls nls/c_1258.nls
+2026-08-12T20:58:10.6373085Z rm -f nls/c_1361.nls && ln -s ../../nls/c_1361.nls nls/c_1361.nls
+2026-08-12T20:58:10.6373873Z rm -f nls/c_20127.nls && ln -s ../../nls/c_20127.nls nls/c_20127.nls
+2026-08-12T20:58:10.6401475Z rm -f nls/c_20866.nls && ln -s ../../nls/c_20866.nls nls/c_20866.nls
+2026-08-12T20:58:10.6515371Z rm -f nls/c_20932.nls && ln -s ../../nls/c_20932.nls nls/c_20932.nls
+2026-08-12T20:58:10.6712855Z rm -f nls/c_20949.nls && ln -s ../../nls/c_20949.nls nls/c_20949.nls
+2026-08-12T20:58:10.6733770Z rm -f nls/c_21866.nls && ln -s ../../nls/c_21866.nls nls/c_21866.nls
+2026-08-12T20:58:10.6736387Z rm -f nls/c_28591.nls && ln -s ../../nls/c_28591.nls nls/c_28591.nls
+2026-08-12T20:58:10.6737372Z rm -f nls/c_28592.nls && ln -s ../../nls/c_28592.nls nls/c_28592.nls
+2026-08-12T20:58:10.6738088Z rm -f nls/c_28593.nls && ln -s ../../nls/c_28593.nls nls/c_28593.nls
+2026-08-12T20:58:10.6738769Z rm -f nls/c_28594.nls && ln -s ../../nls/c_28594.nls nls/c_28594.nls
+2026-08-12T20:58:10.6739475Z rm -f nls/c_28595.nls && ln -s ../../nls/c_28595.nls nls/c_28595.nls
+2026-08-12T20:58:10.6740275Z rm -f nls/c_28596.nls && ln -s ../../nls/c_28596.nls nls/c_28596.nls
+2026-08-12T20:58:10.6741071Z rm -f nls/c_28597.nls && ln -s ../../nls/c_28597.nls nls/c_28597.nls
+2026-08-12T20:58:10.6742095Z rm -f nls/c_28598.nls && ln -s ../../nls/c_28598.nls nls/c_28598.nls
+2026-08-12T20:58:10.6743715Z rm -f nls/c_28599.nls && ln -s ../../nls/c_28599.nls nls/c_28599.nls
+2026-08-12T20:58:10.6756659Z rm -f nls/c_28603.nls && ln -s ../../nls/c_28603.nls nls/c_28603.nls
+2026-08-12T20:58:10.6781494Z rm -f nls/c_28605.nls && ln -s ../../nls/c_28605.nls nls/c_28605.nls
+2026-08-12T20:58:10.6798584Z rm -f nls/c_437.nls && ln -s ../../nls/c_437.nls nls/c_437.nls
+2026-08-12T20:58:10.6813759Z rm -f nls/c_500.nls && ln -s ../../nls/c_500.nls nls/c_500.nls
+2026-08-12T20:58:10.6819798Z rm -f nls/c_708.nls && ln -s ../../nls/c_708.nls nls/c_708.nls
+2026-08-12T20:58:10.6844724Z rm -f nls/c_720.nls && ln -s ../../nls/c_720.nls nls/c_720.nls
+2026-08-12T20:58:10.6860697Z rm -f nls/c_737.nls && ln -s ../../nls/c_737.nls nls/c_737.nls
+2026-08-12T20:58:10.6883972Z rm -f nls/c_775.nls && ln -s ../../nls/c_775.nls nls/c_775.nls
+2026-08-12T20:58:10.6894314Z rm -f nls/c_850.nls && ln -s ../../nls/c_850.nls nls/c_850.nls
+2026-08-12T20:58:10.6910989Z rm -f nls/c_852.nls && ln -s ../../nls/c_852.nls nls/c_852.nls
+2026-08-12T20:58:10.6928613Z rm -f nls/c_855.nls && ln -s ../../nls/c_855.nls nls/c_855.nls
+2026-08-12T20:58:10.6948837Z rm -f nls/c_857.nls && ln -s ../../nls/c_857.nls nls/c_857.nls
+2026-08-12T20:58:10.6959358Z rm -f nls/c_860.nls && ln -s ../../nls/c_860.nls nls/c_860.nls
+2026-08-12T20:58:10.6982822Z rm -f nls/c_861.nls && ln -s ../../nls/c_861.nls nls/c_861.nls
+2026-08-12T20:58:10.7000238Z rm -f nls/c_862.nls && ln -s ../../nls/c_862.nls nls/c_862.nls
+2026-08-12T20:58:10.7021076Z rm -f nls/c_863.nls && ln -s ../../nls/c_863.nls nls/c_863.nls
+2026-08-12T20:58:10.7022574Z rm -f nls/c_864.nls && ln -s ../../nls/c_864.nls nls/c_864.nls
+2026-08-12T20:58:10.7051388Z rm -f nls/c_865.nls && ln -s ../../nls/c_865.nls nls/c_865.nls
+2026-08-12T20:58:10.7066029Z rm -f nls/c_866.nls && ln -s ../../nls/c_866.nls nls/c_866.nls
+2026-08-12T20:58:10.7082830Z rm -f nls/c_869.nls && ln -s ../../nls/c_869.nls nls/c_869.nls
+2026-08-12T20:58:10.7099329Z rm -f nls/c_874.nls && ln -s ../../nls/c_874.nls nls/c_874.nls
+2026-08-12T20:58:10.7122663Z rm -f nls/c_875.nls && ln -s ../../nls/c_875.nls nls/c_875.nls
+2026-08-12T20:58:10.7132493Z rm -f nls/c_932.nls && ln -s ../../nls/c_932.nls nls/c_932.nls
+2026-08-12T20:58:10.7158358Z rm -f nls/c_936.nls && ln -s ../../nls/c_936.nls nls/c_936.nls
+2026-08-12T20:58:10.7159448Z rm -f nls/c_949.nls && ln -s ../../nls/c_949.nls nls/c_949.nls
+2026-08-12T20:58:10.7185861Z rm -f nls/c_950.nls && ln -s ../../nls/c_950.nls nls/c_950.nls
+2026-08-12T20:58:10.7189386Z rm -f nls/l_intl.nls && ln -s ../../nls/l_intl.nls nls/l_intl.nls
+2026-08-12T20:58:10.7213500Z rm -f nls/locale.nls && ln -s ../../nls/locale.nls nls/locale.nls
+2026-08-12T20:58:10.7223367Z rm -f nls/normidna.nls && ln -s ../../nls/normidna.nls nls/normidna.nls
+2026-08-12T20:58:10.7257057Z rm -f nls/normnfc.nls && ln -s ../../nls/normnfc.nls nls/normnfc.nls
+2026-08-12T20:58:10.7259696Z rm -f nls/normnfd.nls && ln -s ../../nls/normnfd.nls nls/normnfd.nls
+2026-08-12T20:58:10.7283206Z rm -f nls/normnfkc.nls && ln -s ../../nls/normnfkc.nls nls/normnfkc.nls
+2026-08-12T20:58:10.7298015Z rm -f nls/normnfkd.nls && ln -s ../../nls/normnfkd.nls nls/normnfkd.nls
+2026-08-12T20:58:10.7311419Z rm -f nls/sortdefault.nls && ln -s ../../nls/sortdefault.nls nls/sortdefault.nls
+2026-08-12T20:58:10.7335591Z gcc -m32 -o tools/install tools/install.o 
+2026-08-12T20:58:10.7502817Z gcc -m32 -o tools/make_xftmpl tools/make_xftmpl.o 
+2026-08-12T20:58:10.7587351Z gcc -m32 -o tools/sfnt2fon/sfnt2fon tools/sfnt2fon/sfnt2fon.o -lfreetype 
+2026-08-12T20:58:10.7590564Z gcc -m32 -c -o tools/widl/attribute.o ../tools/widl/attribute.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:58:10.7592718Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:10.7594664Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:10.7596272Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:10.7598086Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:10.7599671Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:10.8103671Z gcc -m32 -c -o tools/widl/parser.yy.o tools/widl/parser.yy.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:58:10.8122571Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:10.8303173Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:10.8304887Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:10.8502969Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:10.8504818Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:11.0519162Z gcc -m32 -c -o tools/widl/parser.tab.o tools/widl/parser.tab.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:58:11.0533022Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:11.0713209Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:11.0722638Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:11.0913384Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:11.0922646Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:12.3374119Z gcc -m32 -c -o tools/widl/ppl.yy.o tools/widl/ppl.yy.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:58:12.3402829Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:12.3431517Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:12.3433376Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:12.3452647Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:12.3472842Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:13.3393275Z gcc -m32 -c -o tools/widl/ppy.tab.o tools/widl/ppy.tab.c -Itools/widl -I../tools/widl -I../tools/wrc -Iinclude \
+2026-08-12T20:58:13.3412745Z   -I../include -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:13.3414240Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:13.3432752Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:13.3452724Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:13.3472749Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:13.7586743Z gcc -m32 -o tools/wine/wine tools/wine/wine.o 
+2026-08-12T20:58:13.7820263Z gcc -m32 -o tools/winebuild/winebuild tools/winebuild/import.o tools/winebuild/main.o tools/winebuild/parser.o \
+2026-08-12T20:58:13.7822642Z   tools/winebuild/relay.o tools/winebuild/res16.o tools/winebuild/res32.o tools/winebuild/spec16.o \
+2026-08-12T20:58:13.7852396Z   tools/winebuild/spec32.o tools/winebuild/utils.o 
+2026-08-12T20:58:13.8173824Z gcc -m32 -o tools/winedump/winedump tools/winedump/debug.o tools/winedump/dos.o tools/winedump/dump.o tools/winedump/emf.o \
+2026-08-12T20:58:13.8182632Z   tools/winedump/emfspool.o tools/winedump/font.o tools/winedump/le.o tools/winedump/lib.o \
+2026-08-12T20:58:13.8183799Z   tools/winedump/lnk.o tools/winedump/main.o tools/winedump/mf.o tools/winedump/minidump.o \
+2026-08-12T20:58:13.8184883Z   tools/winedump/misc.o tools/winedump/msc.o tools/winedump/msmangle.o tools/winedump/ne.o \
+2026-08-12T20:58:13.8185942Z   tools/winedump/nls.o tools/winedump/output.o tools/winedump/pdb.o tools/winedump/pe.o \
+2026-08-12T20:58:13.8187014Z   tools/winedump/reg.o tools/winedump/search.o tools/winedump/symbol.o tools/winedump/tlb.o \
+2026-08-12T20:58:13.8187800Z   
+2026-08-12T20:58:13.8602899Z gcc -m32 -o tools/winegcc/winegcc tools/winegcc/winegcc.o 
+2026-08-12T20:58:13.8863021Z gcc -m32 -c -o tools/wmc/mcl.o ../tools/wmc/mcl.c -Itools/wmc -I../tools/wmc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:13.8893013Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:13.8922705Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:13.8942613Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:13.8962573Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:13.8963612Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:14.1433961Z gcc -m32 -c -o tools/wmc/mcy.tab.o tools/wmc/mcy.tab.c -Itools/wmc -I../tools/wmc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:14.1442543Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:14.1443931Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:14.1460958Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:14.1463105Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:14.1465261Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:14.2523228Z gcc -m32 -c -o tools/wrc/parser.yy.o tools/wrc/parser.yy.c -Itools/wrc -I../tools/wrc -Iinclude -I../include \
+2026-08-12T20:58:14.2552616Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:14.2592827Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:14.2622771Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:14.2662532Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:14.2702598Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:14.5753887Z gcc -m32 -c -o tools/wrc/parser.tab.o tools/wrc/parser.tab.c -Itools/wrc -I../tools/wrc -Iinclude -I../include \
+2026-08-12T20:58:14.5780602Z   -D__WINESRC__ -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden \
+2026-08-12T20:58:14.5782501Z   -fno-stack-protector -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body \
+2026-08-12T20:58:14.5812791Z   -Wignored-qualifiers -Winit-self -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith \
+2026-08-12T20:58:14.5814068Z   -Wshift-overflow=2 -Wstrict-prototypes -Wtype-limits -Wunused-but-set-parameter -Wvla \
+2026-08-12T20:58:14.5832676Z   -Wwrite-strings -Wno-misleading-indentation -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:15.0582995Z gcc -m32 -c -o tools/wrc/ppl.yy.o tools/wrc/ppl.yy.c -Itools/wrc -I../tools/wrc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:15.0593345Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:15.0620708Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:15.0642529Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:15.0652747Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:15.0672461Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:15.8679314Z gcc -m32 -c -o tools/wrc/ppy.tab.o tools/wrc/ppy.tab.c -Itools/wrc -I../tools/wrc -Iinclude -I../include -D__WINESRC__ \
+2026-08-12T20:58:15.8692552Z   -DWINE_UNIX_LIB -Wall -pipe -fcf-protection=none -fvisibility=hidden -fno-stack-protector \
+2026-08-12T20:58:15.8712623Z   -fno-strict-aliasing -Wdeclaration-after-statement -Wempty-body -Wignored-qualifiers -Winit-self \
+2026-08-12T20:58:15.8732595Z   -Wlogical-op -Wno-packed-not-aligned -Wpointer-arith -Wshift-overflow=2 -Wstrict-prototypes \
+2026-08-12T20:58:15.8773309Z   -Wtype-limits -Wunused-but-set-parameter -Wvla -Wwrite-strings -Wno-misleading-indentation \
+2026-08-12T20:58:15.8792691Z   -gdwarf-4 -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0
+2026-08-12T20:58:16.4823836Z gcc -m32 -o tools/widl/widl tools/widl/attribute.o tools/widl/client.o tools/widl/expr.o tools/widl/hash.o \
+2026-08-12T20:58:16.4852707Z   tools/widl/header.o tools/widl/metadata.o tools/widl/proxy.o tools/widl/register.o \
+2026-08-12T20:58:16.4853860Z   tools/widl/server.o tools/widl/typegen.o tools/widl/typelib.o tools/widl/typetree.o \
+2026-08-12T20:58:16.4882683Z   tools/widl/utils.o tools/widl/widl.o tools/widl/wpp.o tools/widl/write_msft.o \
+2026-08-12T20:58:16.4892562Z   tools/widl/write_sltg.o tools/widl/parser.yy.o tools/widl/parser.tab.o tools/widl/ppl.yy.o \
+2026-08-12T20:58:16.4902440Z   tools/widl/ppy.tab.o 
+2026-08-12T20:58:16.5402944Z rm -f tools/winegcc/winecpp && ln -s winegcc tools/winegcc/winecpp
+2026-08-12T20:58:16.5613792Z rm -f tools/winegcc/wineg++ && ln -s winegcc tools/winegcc/wineg++
+2026-08-12T20:58:16.5614941Z gcc -m32 -o tools/wmc/wmc tools/wmc/lang.o tools/wmc/mcl.o tools/wmc/po.o tools/wmc/utils.o tools/wmc/wmc.o \
+2026-08-12T20:58:16.5615895Z   tools/wmc/write.o tools/wmc/mcy.tab.o 
+2026-08-12T20:58:16.6765834Z gcc -m32 -o tools/wrc/wrc tools/wrc/genres.o tools/wrc/newstruc.o tools/wrc/po.o tools/wrc/utils.o \
+2026-08-12T20:58:16.6767426Z   tools/wrc/wpp.o tools/wrc/wrc.o tools/wrc/parser.yy.o tools/wrc/parser.tab.o tools/wrc/ppl.yy.o \
+2026-08-12T20:58:16.6769043Z   tools/wrc/ppy.tab.o 
