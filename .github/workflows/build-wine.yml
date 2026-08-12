@@ -14,6 +14,14 @@ on:
         description: 'Клон на Wine (например wine-11.3)'
         required: false
         default: 'wine-11.3'
+  # Всяка промяна по рецептата пуска билда наново. Докато той още не работи,
+  # това е точно каквото трябва: поправка → push → нов опит, без цъкане.
+  # Проработи ли, този спусък се маха — час и половина на всеки комит е глупост.
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-wine.yml'
+      - 'scripts/**'
 
 permissions:
   contents: write
@@ -149,3 +157,22 @@ jobs:
           name: wine-x86_64
           path: output/*
           retention-days: 30
+
+      # Артефактът се сваля само от влязъл потребител. Изданието — не: то е
+      # обикновен адрес и Desk може да го вземе с една команда, без пароли.
+      - name: Издание
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: wine-${{ env.WINE_VERSION }}-${{ env.WINE_SHA }}
+          name: Wine ${{ env.WINE_VERSION }} за Desk
+          files: output/*
+          body: |
+            Wine ${{ env.WINE_VERSION }}, компилиран за `x86_64-linux-android28`.
+
+            Изходен код: ${{ env.WINE_REPO }}, клон `${{ env.WINE_BRANCH }}`,
+            комит `${{ env.WINE_SHA }}`. Wine е под LGPL-2.1; лицензите пътуват
+            вътре в архива, в `licenses/`.
+
+            `wine-x86_64.tar.xz` отива в `app/src/main/assets/win/` на Desk.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
