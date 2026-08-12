@@ -1,0 +1,151 @@
+name: Build Wine for Desk
+
+# Компилира Wine за телефона. Тук не се пише Wine — той е чужд публичен код
+# под LGPL-2.1. Тук се ПРАВИ БИЛДЪТ: наши настройки, наша версия, нищо чуждо
+# двоично вътре в Desk.
+#
+# Целта е един файл: `wine-x86_64.tar.xz`, който влиза в
+# `E:\Desk\app\src\main\assets\win\` и се разпъва от `WineContainer.kt`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      wine_branch:
+        description: 'Клон на Wine (например wine-11.3)'
+        required: false
+        default: 'wine-11.3'
+
+permissions:
+  contents: write
+
+env:
+  # Upstream Wine + кръпките за Android/bionic. Без тях Wine не се компилира
+  # за телефон изобщо — това е работа на общността, не наша.
+  WINE_REPO: GameNative/wine
+  NDK_VERSION: '27.3.13750724'
+  LLVM_MINGW_VERSION: '20250920'
+  # Заглавките и библиотеките на Android, срещу които Wine се свързва:
+  # libX11, freetype, zlib. Ползват се при компилиране и част от тях пътуват
+  # после в Desk.
+  TERMUXFS_REPO: GameNative/termux-on-gha
+  TERMUXFS_TAG: build-20260218
+  # Къде ще лежи Wine НА ТЕЛЕФОНА. Записва се вътре в самите библиотеки като
+  # rpath, за да се намират една друга без никакви променливи. Това е
+  # единственото, което един чужд билд не може да знае — и точно затова си
+  # правим свой.
+  DESK_RUNTIME: /data/data/com.desk.shell/files/win/wine
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Билдът на Wine иска ~25 GB. Машината има 14 свободни, докато не се
+      # махне това, което няма да ползваме.
+      - name: Разчисти диска
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost \
+                      /usr/local/lib/android "$AGENT_TOOLSDIRECTORY"
+          df -h /
+
+      - name: Инструменти за компилиране
+        run: sudo bash scripts/setup-deps.sh
+
+      - name: Изходният код на Wine
+        run: |
+          BRANCH="${{ inputs.wine_branch || 'wine-11.3' }}"
+          git clone --depth=1 --branch "$BRANCH" \
+            "https://github.com/${WINE_REPO}.git" wine-src
+          echo "WINE_BRANCH=$BRANCH" >> "$GITHUB_ENV"
+          echo "WINE_VERSION=${BRANCH#wine-}" >> "$GITHUB_ENV"
+          echo "WINE_SHA=$(git -C wine-src rev-parse --short HEAD)" >> "$GITHUB_ENV"
+
+      - name: Библиотеките на Android (termux sysroot)
+        run: |
+          mkdir -p "$HOME/termuxfs/x86_64"
+          cd "$HOME/termuxfs/x86_64"
+          wget -q "https://github.com/${TERMUXFS_REPO}/releases/download/${TERMUXFS_TAG}/termuxfs-x86_64.tar"
+          tar -xf termuxfs-x86_64.tar
+          rm termuxfs-x86_64.tar
+
+      - name: Android NDK
+        uses: actions/cache@v4
+        id: cache-ndk
+        with:
+          path: ~/Android/Sdk/ndk/${{ env.NDK_VERSION }}
+          key: android-ndk-r27d
+
+      - name: Свали NDK
+        if: steps.cache-ndk.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p "$HOME/Android/Sdk/ndk"
+          cd "$HOME/Android/Sdk/ndk"
+          wget -q https://dl.google.com/android/repository/android-ndk-r27d-linux.zip
+          unzip -q android-ndk-r27d-linux.zip
+          mv android-ndk-r27d "${NDK_VERSION}"
+          rm android-ndk-r27d-linux.zip
+
+      - name: llvm-mingw
+        uses: actions/cache@v4
+        id: cache-mingw
+        with:
+          path: ~/toolchains/llvm-mingw-${{ env.LLVM_MINGW_VERSION }}-ucrt-ubuntu-22.04-x86_64
+          key: llvm-mingw-${{ env.LLVM_MINGW_VERSION }}
+
+      # Wine е две половини: Unix страна (.so, говори с Android) и Windows
+      # страна (.dll, това, което програмата вижда). Втората се компилира с
+      # mingw, не с NDK — затова са два различни компилатора.
+      - name: Свали llvm-mingw
+        if: steps.cache-mingw.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p "$HOME/toolchains" && cd "$HOME/toolchains"
+          wget -q "https://github.com/bylaws/llvm-mingw/releases/download/${LLVM_MINGW_VERSION}/llvm-mingw-${LLVM_MINGW_VERSION}-ucrt-ubuntu-22.04-x86_64.tar.xz"
+          tar -xf "llvm-mingw-${LLVM_MINGW_VERSION}-ucrt-ubuntu-22.04-x86_64.tar.xz"
+          rm "llvm-mingw-${LLVM_MINGW_VERSION}-ucrt-ubuntu-22.04-x86_64.tar.xz"
+
+      - name: autogen
+        working-directory: wine-src
+        run: bash autogen.sh
+
+      # Wine строи първо инструменти ЗА СЕБЕ СИ, които вървят на машината,
+      # която компилира — иначе не може да произведе кода за телефона.
+      - name: Инструментите на Wine
+        working-directory: wine-src
+        run: |
+          mkdir -p wine-tools && cd wine-tools
+          ../configure --without-x --without-gstreamer --without-vulkan --without-wayland
+          make -j$(nproc) __tooldeps__ nls/all
+
+      - name: Насочи билда към пътя на Desk
+        working-directory: wine-src
+        run: |
+          # Рецептата на общността записва пътя на Termux. Desk няма Termux;
+          # има своя папка и тя се знае предварително.
+          sed -i "s|^export RUNTIME_PATH=.*|export RUNTIME_PATH=${DESK_RUNTIME}|" \
+            build-scripts/build-step-x86_64.sh
+          grep '^export RUNTIME_PATH=' build-scripts/build-step-x86_64.sh
+
+      - name: Настройка
+        working-directory: wine-src
+        run: bash build-scripts/build-step-x86_64.sh --configure
+
+      - name: Компилиране
+        working-directory: wine-src
+        run: bash build-scripts/build-step-x86_64.sh --build
+
+      - name: Подреждане
+        working-directory: wine-src
+        run: bash build-scripts/build-step-x86_64.sh --install
+
+      - name: Опаковане за Desk
+        run: bash scripts/pack-for-desk.sh
+
+      - name: Готовият слой
+        uses: actions/upload-artifact@v4
+        with:
+          name: wine-x86_64
+          path: output/*
+          retention-days: 30

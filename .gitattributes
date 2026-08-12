@@ -1,0 +1,6 @@
+# Билдът върви на Linux. Скрипт с краища на редовете от Windows се проваля
+# още на първия ред — `/usr/bin/env: bash\r: No such file or directory` — и
+# грешката не казва нищо за истинската причина.
+* text=auto eol=lf
+*.sh text eol=lf
+*.yml text eol=lf
