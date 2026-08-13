@@ -22,6 +22,7 @@ on:
     paths:
       - '.github/workflows/build-wine.yml'
       - 'scripts/**'
+      - 'patches/**'
 
 permissions:
   contents: write
@@ -146,17 +147,87 @@ jobs:
             build-scripts/build-step-x86_64.sh
           grep -- '-fontconfig' build-scripts/build-step-x86_64.sh
 
+          # Кръпките за Android са писани за по-стар Wine и част от тях вече не
+          # се лепят. Скриптът няма `set -e`, така че досега това минаваше
+          # мълчаливо. Сега всяка провалена кръпка се записва по име и се
+          # показва после — чуждият списък може да си се проваля, стига да
+          # знаем точно кое е паднало.
+          sed -i 's|^        git apply ./android/patches/\$patch$|        git apply "./android/patches/$patch" \|\| echo "$patch" >> /tmp/patch-failures.txt|' \
+            build-scripts/build-step-x86_64.sh
+          grep -n 'git apply' build-scripts/build-step-x86_64.sh
+
+          # `make` спира на първата грешка, а един билд тук е ~50 минути. С
+          # `-k` компилира всичко останало и накрая се вижда ЦЕЛИЯТ списък
+          # грешки, а не първата от тях.
+          sed -i 's|^    make -j\$(nproc)$|    make -k -j$(nproc)|' \
+            build-scripts/build-step-x86_64.sh
+          sed -i 's|^    make install -j\$(nproc)$|    make install -k -j$(nproc)|' \
+            build-scripts/build-step-x86_64.sh
+          grep -n 'make -k\|make install -k' build-scripts/build-step-x86_64.sh
+
       - name: Настройка
         working-directory: wine-src
         run: bash build-scripts/build-step-x86_64.sh --configure
 
+      # Нашите кръпки. Направени са срещу истинския код на wine-11.3 и се
+      # лепят СТРОГО: не се ли залепят, билдът спира тук, а не след час с
+      # неразбираема грешка. Защо са нужни — пише вътре в самите файлове.
+      - name: Кръпките на Desk
+        working-directory: wine-src
+        run: |
+          for p in "$GITHUB_WORKSPACE"/patches/*.patch; do
+            echo "── $(basename "$p")"
+            git apply --verbose "$p"
+          done
+
+      - name: Какво не се залепи
+        run: |
+          if [ -f /tmp/patch-failures.txt ]; then
+            echo "Кръпки на GameNative, които НЕ се залепиха:"
+            sort -u /tmp/patch-failures.txt | sed 's/^/   /'
+          else
+            echo "Всички кръпки се залепиха."
+          fi
+
       - name: Компилиране
         working-directory: wine-src
-        run: bash build-scripts/build-step-x86_64.sh --build
+        run: bash build-scripts/build-step-x86_64.sh --build 2>&1 | tee /tmp/build.log || true
+
+      # `make -k` не спира билда, затова тук се брои какво е излязло. Ако
+      # unix страната липсва, няма смисъл да се пакетира нищо.
+      - name: Провери какво се компилира
+        working-directory: wine-src
+        run: |
+          echo "── грешки при компилирането ──"
+          ERRORS=$(grep -E '^[^ ]+\.(c|h|cpp):[0-9]+:[0-9]+: error:|^make: \*\*\*' /tmp/build.log | sort -u || true)
+          if [ -n "$ERRORS" ]; then echo "$ERRORS" | sed 's/^/   /'; else echo "   няма"; fi
+
+          echo
+          echo "── ключовите файлове ──"
+          MISSING=0
+          for f in loader/wine dlls/ntdll/ntdll.so dlls/win32u/win32u.so \
+                   dlls/winex11.drv/winex11.so server/wineserver; do
+            if [ -f "$f" ]; then echo "   има:  $f"
+            else echo "   ЛИПСВА: $f"; MISSING=1; fi
+          done
+          echo "   unix библиотеки: $(find dlls -name '*.so' | wc -l)"
+
+          [ $MISSING -eq 0 ] || { echo; echo "Wine не е готов — спирам."; exit 1; }
 
       - name: Подреждане
         working-directory: wine-src
         run: bash build-scripts/build-step-x86_64.sh --install
+
+      # Не се знае предварително къде Wine слага зареждача си (в bin/ или в
+      # lib/wine/x86_64-unix/) — това се вижда само отвътре.
+      - name: Какво излезе
+        run: |
+          echo "── bin ──"
+          ls -la "$HOME/compiled-files-x86_64/bin" || true
+          echo "── lib/wine ──"
+          ls -la "$HOME/compiled-files-x86_64/lib/wine" || true
+          echo "── unix библиотеки ──"
+          find "$HOME/compiled-files-x86_64/lib" -name '*.so' | sed 's/^/   /' || true
 
       - name: Опаковане за Desk
         run: bash scripts/pack-for-desk.sh

@@ -36,6 +36,46 @@ cp -a "$BUILT/bin/." "$PACK/bin/"
 cp -a "$BUILT/lib/." "$PACK/lib/"
 cp -a "$BUILT/share/." "$PACK/share/"
 
+# Ако unix страната липсва, Wine няма да тръгне никога — по-добре да се разбере
+# тук, отколкото на телефона. (Билд #2 даде точно това: 975 MB .dll-и и нито
+# една unix библиотека, защото `make` беше умрял, а никой не беше проверил.)
+count_so=$(find "$PACK/lib" -name '*.so' | wc -l)
+[ "$count_so" -ge 5 ] || { echo "само $count_so .so файла — unix страната липсва" >&2; exit 1; }
+
+# Самият зареждач Wine инсталира в lib/, а в bin/ стоят само препратки към
+# него ("winecfg -> wine" и още десетина). Няма ли bin/wine, всички те висят.
+if [ ! -e "$PACK/bin/wine" ]; then
+  real=$(find "$PACK/lib/wine" -maxdepth 2 -name wine -type f | head -1)
+  [ -n "$real" ] || { echo "зареждачът wine изобщо липсва" >&2; exit 1; }
+  ln -s "../lib/wine/$(basename "$(dirname "$real")")/wine" "$PACK/bin/wine"
+  echo "   bin/wine → ${real#$PACK/}"
+fi
+
+# ── никому не е нужен разказът как е компилирано ────────────────────────────
+#
+# Измерено на билд #2: 975 MB разпънат Wine, от които огромната част е
+# отладъчна информация — `wined3d.dll` е 23 MB, а без нея е 4.4 MB. Тя служи
+# само на winedbg да покаже имена на функции при забиване; телефонът не я
+# ползва.
+#
+# Маха се САМО `.debug_*` (`--strip-debug`), не и таблицата с износи.
+# Проверено локално върху истинските .dll от билд #2: „Wine builtin DLL“ в
+# DOS хедъра оцелява — по този надпис Wine познава кой .dll е негов и кой е
+# истински уиндоузки, и без него всичко се разпада.
+STRIP="$HOME/Android/Sdk/ndk/${NDK_VERSION:-27.3.13750724}/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip"
+
+strip_everything() {
+  find "$PACK/lib/wine" -type f \( -name '*.dll' -o -name '*.exe' \) \
+    -exec "$STRIP" --strip-debug {} + 2>/dev/null || true
+  find "$PACK/lib" -type f -name '*.so*' -exec "$STRIP" --strip-unneeded {} + 2>/dev/null || true
+  find "$PACK/bin" -type f -perm -u+x -exec "$STRIP" --strip-all {} + 2>/dev/null || true
+}
+
+before=$(du -sm "$PACK" | cut -f1)
+echo "── махане на отладъчната информация ──"
+strip_everything
+echo "   $before MB → $(du -sm "$PACK" | cut -f1) MB"
+
 # ── кои чужди библиотеки наистина се ползват ─────────────────────────────────
 
 needed_of() {
@@ -78,6 +118,9 @@ while [ ${#queue[@]} -gt 0 ]; do
     fi
   done
 done
+
+# Донесеното от Termux също носи отладъчна информация.
+strip_everything
 
 # ── лицензите пътуват заедно с кода ─────────────────────────────────────────
 #
