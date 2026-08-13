@@ -156,6 +156,15 @@ jobs:
             build-scripts/build-step-x86_64.sh
           grep -n 'git apply' build-scripts/build-step-x86_64.sh
 
+          # Тази кръпка зашива пътищата на ЧУЖДО приложение в кода на Wine:
+          # прави `drive_d` вместо `drive_c`, оставя `dosdevices/c:` да сочи
+          # към несъздадена папка и насочва `Z:` към
+          # `/data/data/app.gamenative/files/imagefs/`. Измерено на 13.08.2026:
+          # с нея Wine тръгва, но не може да създаде нито една папка в диска C:.
+          # Без нея остава поведението на upstream — то е точно каквото трябва.
+          sed -i '/"dlls_ntdll_unix_server_c.patch"/d' \
+            build-scripts/build-step-x86_64.sh
+
           # `make` спира на първата грешка, а един билд тук е ~50 минути. С
           # `-k` компилира всичко останало и накрая се вижда ЦЕЛИЯТ списък
           # грешки, а не първата от тях.
