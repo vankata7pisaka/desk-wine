@@ -1,3 +1,28 @@
+# Wine for RigDesk
+
+The Wine that runs Windows programs inside **[RigDesk](https://rigdesk.app)** on Android
+is built here, in the open, from public source.
+
+- **Source:** [`GameNative/wine`](https://github.com/GameNative/wine), branch `wine-11.3` —
+  upstream Wine 11.3 plus community patches for Android/bionic.
+- **Our changes:** the two patches in [`patches/`](patches) and the build recipe in
+  [`.github/workflows/build-wine.yml`](.github/workflows/build-wine.yml) and
+  [`scripts/`](scripts). Nothing else is changed.
+- **Target:** `x86_64-linux-android28`. box64 translates the x86-64 code to ARM on the phone,
+  so no root, no proot and no Linux image are needed.
+- **The built layer** that RigDesk downloads is published in
+  [`desk-wine-dist`](https://github.com/vankata7pisaka/desk-wine-dist/releases). You can
+  build your own from this repository and load it into RigDesk instead.
+- **Licence:** Wine is LGPL-2.1. The libraries packed next to it keep their own licences,
+  shipped in `licenses/` inside the archive.
+
+Build it yourself: **Actions → Build Wine for Desk → Run workflow** (about 45 minutes on a
+GitHub runner).
+
+The notes below are the working log, in Bulgarian.
+
+---
+
 # Desk — билдът на Wine
 
 Тук не се пише Wine. Wine е чужд публичен код под LGPL-2.1, писан от 1993 г.
